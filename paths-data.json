@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Software Developer",
+    "description": "Comprehensive path to become a professional software developer with essential programming skills",
+    "level": "Beginner",
+    "lessons": 28,
+    "link": "paths/software-developer.html",
+    "tags": ["programming", "software", "development", "coding", "computer-science"]
+  },
+  {
+    "title": "Full Stack Web Development",
+    "description": "Complete path to become a full-stack web developer, from frontend to backend",
+    "level": "Beginner",
+    "lessons": 25,
+    "link": "paths/full-stack.html",
+    "tags": ["web", "frontend", "backend", "javascript", "nodejs"]
+  },
+  {
+    "title": "Data Science & Machine Learning",
+    "description": "Master data science and machine learning with Python and advanced algorithms",
+    "level": "Intermediate",
+    "lessons": 30,
+    "link": "paths/data-science-ml.html",
+    "tags": ["data", "ml", "python", "ai", "statistics"]
+  },
+  {
+    "title": "Mobile App Development",
+    "description": "Build cross-platform mobile applications for iOS and Android",
+    "level": "Intermediate",
+    "lessons": 20,
+    "link": "paths/mobile-dev.html",
+    "tags": ["mobile", "react-native", "ios", "android"]
+  },
+  {
+    "title": "DevOps Engineering",
+    "description": "Learn DevOps practices, CI/CD, cloud deployment, and infrastructure automation",
+    "level": "Advanced",
+    "lessons": 22,
+    "link": "paths/devops.html",
+    "tags": ["devops", "cloud", "automation", "ci/cd"]
+  }
+]

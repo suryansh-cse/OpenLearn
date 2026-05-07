@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact OpenLearn</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="info-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Open<span>Learn</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="paths.html">Paths</a>
+          <a href="courses.html">Courses</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html" class="active" aria-current="page">Contact</a>
+          <a href="signup.html" class="cta">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-inner narrow">
+          <span class="hero-eyebrow">Get in touch</span>
+          <h1>Contact OpenLearn</h1>
+          <p class="lead">
+            If you have questions, feedback, or suggestions, feel free to reach out.
+          </p>
+        </div>
+      </section>
+
+      <section class="container split-layout contact-layout">
+        <article class="panel-card">
+          <span class="section-kicker">Send a message</span>
+          <h2>We would love to hear from you.</h2>
+          <form class="form-card" id="contactForm">
+            <label for="contact-type">Message Type</label>
+            <select id="contact-type" name="type">
+              <option value="Contact">Contact</option>
+              <option value="Help">Help</option>
+              <option value="Feedback">Feedback</option>
+            </select>
+
+            <label for="contact-name">Name</label>
+            <input id="contact-name" type="text" name="name" placeholder="Your name" autocomplete="name" required />
+
+            <label for="contact-email">Email</label>
+            <input id="contact-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here" required></textarea>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+            <p class="form-note">Messages are now saved locally so you can review them later and move to a database when you are ready.</p>
+            <p id="contactStatus" class="form-status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <aside class="panel-card info-stack">
+          <span class="section-kicker">Contact information</span>
+          <h2>Reach out any time.</h2>
+          <div class="contact-item">
+            <strong>Email</strong>
+            <p><a class="contact-link" href="mailto:openlearn.platfome@gmail.com">openlearn.platfome@gmail.com</a></p>
+          </div>
+          <div class="contact-item">
+            <strong>Support</strong>
+            <p>Questions, feedback, and platform suggestions are always welcome.</p>
+          </div>
+          <div class="contact-item">
+            <strong>Response time</strong>
+            <p>We aim to reply as quickly as possible with helpful next steps.</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>&copy; <span id="year"></span> OpenLearn</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="contact.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

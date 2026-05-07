@@ -1,0 +1,22 @@
+{
+  "user-1777446795423-b5614615": {
+    "saved": [],
+    "progress": {
+      "course:test": {
+        "id": "course:test",
+        "title": "Test",
+        "kind": "course",
+        "link": "courses.html",
+        "visits": 2,
+        "completed": true,
+        "updatedAt": "2026-04-29T07:13:15.478Z"
+      }
+    },
+    "recent": []
+  },
+  "user-1778140851889-bac0f44a": {
+    "saved": [],
+    "progress": {},
+    "recent": []
+  }
+}

@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenLearn - Learn anything</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="home-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Open<span>Learn</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html" class="active" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="paths.html">Paths</a>
+          <a href="courses.html">Courses</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+          <a href="signup.html" class="cta">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="hero-eyebrow">Modern learning map</span>
+            <h1>Learn the right things, not everything.</h1>
+            <p class="lead">
+              OpenLearn helps you find what to learn, why it matters, and where to begin without the usual confusion.
+            </p>
+
+            <form class="search-form" role="search" onsubmit="return false;">
+              <div class="search-wrapper">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Search skills, paths, or careers..."
+                  autocomplete="off"
+                />
+                <div id="suggestions" class="suggestions-box"></div>
+              </div>
+            </form>
+
+            <div class="hero-stats">
+              <div>
+                <strong>Focused</strong>
+                <span>Clear learning paths for modern roles</span>
+              </div>
+              <div>
+                <strong>Practical</strong>
+                <span>Useful resources with real direction</span>
+              </div>
+              <div>
+                <strong>Simple</strong>
+                <span>Easy starting points for every level</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn-primary" href="paths.html">Explore Paths</a>
+              <a class="btn-secondary" href="courses.html">Browse Courses</a>
+            </div>
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-stack">
+              <a class="courses-link" href="courses/web-design/web-design.html">
+                <div class="card-preview">
+                  <div class="preview-badge">Trending course</div>
+                  <div class="card-image"></div>
+                  <div class="card-body">
+                    <h3>Introduction to Web Design</h3>
+                    <p>Learn the foundations of modern, responsive web design with HTML and CSS.</p>
+                    <div class="preview-meta">
+                      <span>Beginner</span>
+                      <span>Project-based</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="courses" class="courses container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Start here</span>
+            <h2>Popular Courses</h2>
+          </div>
+          <a class="section-link" href="courses.html">See all courses</a>
+        </div>
+        <div class="course-grid">
+          <a class="course-link" href="courses/rwd/rwd.html">
+            <article class="course-card">
+              <div class="thumb thumb-1"></div>
+              <div class="info">
+                <h3>Responsive Web Design</h3>
+                <p>Learn to create websites that look great on any device.</p>
+                <div class="meta">4 lessons - Beginner</div>
+              </div>
+            </article>
+          </a>
+
+          <a class="course-link" href="courses/javascript/javascript.html">
+            <article class="course-card">
+              <div class="thumb thumb-2"></div>
+              <div class="info">
+                <h3>JavaScript Essentials</h3>
+                <p>Core programming concepts with hands-on exercises.</p>
+                <div class="meta">8 lessons - Intermediate</div>
+              </div>
+            </article>
+          </a>
+
+          <a class="course-link" href="courses/data-visualization/data-visualization.html">
+            <article class="course-card">
+              <div class="thumb thumb-3"></div>
+              <div class="info">
+                <h3>Data Visualisation</h3>
+                <p>Create compelling charts and dashboards.</p>
+                <div class="meta">6 lessons - Beginner</div>
+              </div>
+            </article>
+          </a>
+
+          <a class="course-link" href="courses/ml/ml.html">
+            <article class="course-card">
+              <div class="thumb thumb-4"></div>
+              <div class="info">
+                <h3>Machine Learning Basics</h3>
+                <p>Understand models and pipelines with practical projects.</p>
+                <div class="meta">10 lessons - Advanced</div>
+              </div>
+            </article>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="container about">
+        <div class="about-grid">
+          <div>
+            <span class="section-kicker">Why OpenLearn</span>
+            <h2>Learning that feels simpler, clearer, and more useful</h2>
+            <p>
+              OpenLearn is designed to help you find the right starting point, follow a better path, and keep learning without feeling lost in too many options.
+            </p>
+            <p><a class="btn-outline" href="about.html">Learn more</a></p>
+          </div>
+          <div class="feature-list">
+            <div class="feature">
+              <strong>Flexible</strong>
+              <p>Learn at your own pace, on your own schedule, from anywhere.</p>
+            </div>
+            <div class="feature">
+              <strong>Expert-led</strong>
+              <p>Study with resources shaped by practical experience and strong teaching.</p>
+            </div>
+            <div class="feature">
+              <strong>Community</strong>
+              <p>Grow alongside other learners and stay motivated as you build.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>&copy; <span id="year"></span> OpenLearn</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="searchData.js"></script>
+    <script src="data.js"></script>
+    <script src="Backend.js"></script>
+    <script src="search.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

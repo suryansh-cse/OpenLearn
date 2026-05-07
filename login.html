@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log In to OpenLearn</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="info-page login-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Open<span>Learn</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="paths.html">Paths</a>
+          <a href="courses.html">Courses</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+          <a href="signup.html" class="cta">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-inner narrow">
+          <span class="hero-eyebrow">Welcome back</span>
+          <h1>Log In to OpenLearn</h1>
+          <p class="lead">
+            Pick up where you left off and continue learning with your saved courses and paths.
+          </p>
+        </div>
+      </section>
+
+      <section class="container auth-showcase auth-shell">
+        <aside class="panel-card auth-preview-card">
+          <span class="section-kicker">Daily momentum</span>
+          <h2>Keep your learning streak alive.</h2>
+          <p>
+            Jump back into saved paths, continue your last lesson, and keep all your progress in one profile.
+          </p>
+
+          <div class="auth-preview-phone">
+            <div class="auth-preview-header">
+              <strong>@openlearn.you</strong>
+              <span>3 day streak</span>
+            </div>
+            <div class="auth-preview-stat-row">
+              <div>
+                <strong>12</strong>
+                <span>Saved</span>
+              </div>
+              <div>
+                <strong>7</strong>
+                <span>Finished</span>
+              </div>
+              <div>
+                <strong>4</strong>
+                <span>Active</span>
+              </div>
+            </div>
+            <div class="auth-preview-grid">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </aside>
+
+        <article class="panel-card auth-card auth-card-rich">
+          <span class="section-kicker">Log in</span>
+          <h2>Welcome back.</h2>
+          <p class="auth-intro">Open your profile, continue learning, and pick up where you left off.</p>
+
+          <button type="button" class="auth-social-button" data-auth-provider="google">
+            <span class="auth-social-icon">G</span>
+            <span>Continue with Google</span>
+          </button>
+
+          <div class="auth-divider"><span>or</span></div>
+
+          <form class="form-card" id="loginForm">
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+
+            <label for="login-password">Password</label>
+            <div class="password-field">
+              <input id="login-password" type="password" name="password" placeholder="Enter your password" autocomplete="current-password" required />
+              <button type="button" class="password-toggle" data-password-toggle="login-password">Show</button>
+            </div>
+
+            <div class="auth-form-options">
+              <label class="checkbox-field" for="remember-email">
+                <input id="remember-email" type="checkbox" name="remember-email" />
+                <span>Remember email</span>
+              </label>
+              <button type="button" class="text-button" id="forgotPasswordButton">Forgot password?</button>
+            </div>
+
+            <button type="submit" class="btn-primary">Log In</button>
+            <p id="loginStatus" class="form-status" aria-live="polite"></p>
+          </form>
+
+          <p class="login-link">
+            New here? <a href="signup.html">Create an account.</a>
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>&copy; <span id="year"></span> OpenLearn</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

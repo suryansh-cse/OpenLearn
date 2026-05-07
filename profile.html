@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpenLearn Learner Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="info-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Open<span>Learn</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="paths.html">Paths</a>
+          <a href="courses.html">Courses</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+          <a href="profile.html" class="cta active" aria-current="page">Profile</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <span class="hero-eyebrow">Learner dashboard</span>
+          <h1>Your learning command center</h1>
+          <p class="lead">
+            Continue your courses, review saved paths, and keep your OpenLearn momentum in one focused place.
+          </p>
+        </div>
+      </section>
+
+      <div id="profileMount"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>&copy; <span id="year"></span> OpenLearn</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

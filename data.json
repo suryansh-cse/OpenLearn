@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Responsive Web Design",
+    "description": "Learn to create websites that look great on any device",
+    "level": "Beginner",
+    "lessons": 4,
+    "link": "courses/rwd/rwd.html",
+    "tags": ["web", "html", "css"]
+  },
+  {
+    "title": "JavaScript Essentials",
+    "description": "Core programming concepts with hands-on exercises",
+    "level": "Intermediate",
+    "lessons": 8,
+    "link": "courses/javascript/javascript.html",
+    "tags": ["javascript", "programming", "web"]
+  },
+  {
+    "title": "Data Visualisation",
+    "description": "Create compelling charts and dashboards",
+    "level": "Beginner",
+    "lessons": 6,
+    "link": "courses/data-visualization/data-visualization.html",
+    "tags": ["data", "visualization", "charts"]
+  },
+  {
+    "title": "Machine Learning Basics",
+    "description": "Understand models and pipelines with practical projects",
+    "level": "Advanced",
+    "lessons": 10,
+    "link": "courses/ml/ml.html",
+    "tags": ["ml", "ai", "python"]
+  },
+  {
+    "title": "Web Design with HTML & CSS",
+    "description": "Learn HTML and CSS fundamentals for building modern websites",
+    "level": "Beginner",
+    "lessons": 9,
+    "link": "courses/web-design/web-design.html",
+    "tags": ["html", "css", "web-design"]
+  },
+  {
+    "title": "Data Science Masterclass",
+    "description": "Complete guide to data science concepts and techniques with real-world applications",
+    "level": "Intermediate",
+    "lessons": 12,
+    "link": "courses/data-science/data-science.html",
+    "tags": ["data", "machine-learning", "analysis"]
+  },
+  {
+    "title": "C++ Programming",
+    "description": "Learn C++ programming with a focus on object-oriented design and memory management",
+    "level": "Intermediate",
+    "lessons": 10,
+    "link": "courses/cpp/cpp.html",
+    "tags": ["cpp", "programming", "systems"]
+  },
+  {
+    "title": "Cloud Computing Essentials",
+    "description": "Learn cloud computing concepts and services with hands-on labs",
+    "level": "Intermediate",
+    "lessons": 8,
+    "link": "courses/cloud/cloud.html",
+    "tags": ["cloud", "aws", "devops"]
+  },
+  {
+    "title": "Java Masterclass",
+    "description": "Master Java programming concepts and object-oriented design patterns",
+    "level": "Intermediate",
+    "lessons": 11,
+    "link": "courses/java/Java.html",
+    "tags": ["java", "programming", "oop"]
+  },
+  {
+    "title": "Backend Development",
+    "description": "Build scalable server-side applications using Node.js and Express",
+    "level": "Intermediate",
+    "lessons": 10,
+    "link": "courses/nodejs/nodejs.html",
+    "tags": ["backend", "nodejs", "programming"]
+  },
+  {
+    "title": "Database Design and SQL",
+    "description": "Learn database concepts, SQL queries, and optimization techniques",
+    "level": "Beginner",
+    "lessons": 7,
+    "link": "courses/data-base/database.html",
+    "tags": ["database", "sql", "data"]
+  },
+  {
+    "title": "DevOps Masterclass",
+    "description": "Master continuous integration and deployment pipelines",
+    "level": "Advanced",
+    "lessons": 13,
+    "link": "courses/devops/devops.html",
+    "tags": ["devops", "cloud", "automation"]
+  },
+  {
+    "title": "Frontend Development with React",
+    "description": "Build modern web applications with React and component-based architecture",
+    "level": "Beginner",
+    "lessons": 9,
+    "link": "courses/react/react.html",
+    "tags": ["react", "javascript", "web", "frontend"]
+  },
+  {
+    "title": "Python Programming",
+    "description": "Learn Python from scratch to advanced level with practical projects",
+    "level": "Beginner",
+    "lessons": 12,
+    "link": "courses/phython/phython.html",
+    "tags": ["python", "programming", "automation"]
+  },
+  {
+    "title": "Mobile App Development",
+    "description": "Build cross-platform mobile applications with React Native",
+    "level": "Advanced",
+    "lessons": 14,
+    "link": "courses/mobile/mobile.html",
+    "tags": ["mobile", "react-native", "programming"]
+  }
+]

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About OpenLearn</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="info-page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Open<span>Learn</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active" aria-current="page">About</a>
+          <a href="paths.html">Paths</a>
+          <a href="courses.html">Courses</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+          <a href="signup.html" class="cta">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container page-hero-inner">
+          <span class="hero-eyebrow">About us</span>
+          <h1>About OpenLearn</h1>
+          <p class="lead">
+            OpenLearn is a modern learning platform designed to make knowledge organized and easy to explore.
+          </p>
+        </div>
+      </section>
+
+      <section class="container details-section">
+        <article class="info-card single-story-card">
+          <span class="section-kicker">Mission</span>
+          <h2>Learning should feel guided, not overwhelming.</h2>
+          <p>
+            Our mission is to simplify learning by providing structured courses, learning paths, and helpful guides.
+          </p>
+        </article>
+      </section>
+
+      <section class="container details-section">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">How it works</span>
+            <h2>Three simple ways OpenLearn helps you grow</h2>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-panel">
+            <h3>Courses</h3>
+            <p>Individual subjects to learn skills at a pace that works for you.</p>
+          </article>
+
+          <article class="feature-panel">
+            <h3>Learning Paths</h3>
+            <p>Step-by-step skill roadmaps that help you know what to learn next.</p>
+          </article>
+
+          <article class="feature-panel">
+            <h3>Guides</h3>
+            <p>Quick explanations and tutorials to make difficult topics easier to understand.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="container details-section">
+        <article class="info-card single-story-card">
+          <span class="section-kicker">Vision</span>
+          <h2>A clearer way to build modern skills.</h2>
+          <p>
+            To build a platform where anyone can learn skills in a clear and structured way.
+          </p>
+        </article>
+      </section>
+
+      <section class="container details-section">
+        <article class="info-card founder-story-card">
+          <span class="section-kicker">Founder story</span>
+          <h2>The Story Behind OpenLearn</h2>
+          <p>
+            OpenLearn started as a simple idea: learning online should feel clear and structured, not confusing.
+          </p>
+          <p>
+            While exploring different technologies and learning resources, I noticed that many learners struggle because knowledge is scattered across countless tutorials and platforms.
+          </p>
+          <p>
+            OpenLearn was created to organize learning into structured courses, clear learning paths, and helpful guides so anyone can learn skills step by step.
+          </p>
+          <p>
+            This platform is still evolving, and the goal is to continuously improve it into a place where learning feels simple, focused, and meaningful.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>&copy; <span id="year"></span> OpenLearn</div>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="nav.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

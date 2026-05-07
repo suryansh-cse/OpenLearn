@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Web Developer",
+    "description": "Build websites and web applications using HTML, CSS, and JavaScript",
+    "level": "Beginner",
+    "lessons": 4,
+    "link": "careers/web-devloper.html",
+    "tags": ["web", "html", "css", "javascript"]
+  }
+]
