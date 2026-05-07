@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Web Development Path - OpenLearn</title>
+    <link rel="stylesheet" href="../courses_Style.css">
+    <script src="../Backend.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">Open<span>Learn</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+<a href="../index.html">Home</a>
+<a href="../paths.html" class="active" aria-current="page">Paths</a>
+<a href="../courses.html">Courses</a>
+<a href="../careers.html">Careers</a>
+<a href="../index.html" class="cta">Get Started</a>
+</nav>
+        </div>
+    </header>
+
+    <!-- Path Hero -->
+    <section class="course-hero path-hero">
+        <div class="container">
+            <h1>Frontend Web Development</h1>
+            <p>Master modern frontend development with HTML, CSS, and JavaScript frameworks. Create beautiful, interactive user interfaces for the web.</p>
+            <div class="meta">
+                <span>🌐 Beginner Friendly</span>
+                <span>⏱️ 20 lessons total</span>
+                <span>🎯 Interactive UIs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Path Overview -->
+    <section class="course-section">
+        <div class="container">
+            <h2 class="section-title">Path Overview</h2>
+            <p>This frontend development path covers everything you need to build modern, responsive websites and web applications. From basic HTML/CSS to advanced JavaScript frameworks.</p>
+
+            <div class="path-roadmap">
+                <h3>Learning Roadmap</h3>
+                <div class="roadmap-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>HTML & CSS Fundamentals</h4>
+                            <p>Learn the building blocks of web pages</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>JavaScript Essentials</h4>
+                            <p>Add interactivity with JavaScript</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Modern Frameworks</h4>
+                            <p>React and component-based development</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Advanced Projects</h4>
+                            <p>Build complete web applications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses in Path -->
+    <section class="course-section">
+        <div class="container">
+            <h2 class="section-title">Courses in This Path</h2>
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">🌐</div>
+                    <div class="course-content">
+                        <h3>Web Design with HTML & CSS</h3>
+                        <p>Learn HTML and CSS fundamentals for building modern websites</p>
+                        <div class="course-meta">
+                            <span>9 lessons</span>
+                            <span>Beginner</span>
+                        </div>
+                        <a href="../courses/web-design/web-design.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">⚡</div>
+                    <div class="course-content">
+                        <h3>JavaScript Essentials</h3>
+                        <p>Core programming concepts with hands-on exercises</p>
+                        <div class="course-meta">
+                            <span>8 lessons</span>
+                            <span>Intermediate</span>
+                        </div>
+                        <a href="../courses/javascript/javascript.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">⚛️</div>
+                    <div class="course-content">
+                        <h3>Frontend development with React</h3>
+                        <p>Build modern web applications with React and component-based architecture</p>
+                        <div class="course-meta">
+                            <span>9 lessons</span>
+                            <span>Beginner</span>
+                        </div>
+                        <a href="../courses/react/react.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">🎨</div>
+                    <div class="course-content">
+                        <h3>Design Responsive Web</h3>
+                        <p>Learn to create websites that look great on any device</p>
+                        <div class="course-meta">
+                            <span>4 lessons</span>
+                            <span>Beginner</span>
+                        </div>
+                        <a href="../courses/rwd/rwd.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Web Development Path - OpenLearn</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../paths.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+      <header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="../index.html">Open<span>Learn</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<nav class="main-nav" id="mainNav">
+<a href="../index.html">Home</a>
+<a href="../paths.html" class="active" aria-current="page">Paths</a>
+<a href="../courses.html">Courses</a>
+<a href="../careers.html">Careers</a>
+<a href="../index.html" class="cta">Get Started</a>
+</nav>
+</div>
+</header>
+
+    <div class="path-detail-container">
+        <div class="path-header">
+            <div class="path-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="path-info">
+                <h1>Frontend Web Development</h1>
+                <p class="path-description">Master modern frontend development with HTML, CSS, and JavaScript frameworks</p>
+                <div class="path-meta">
+                    <span class="level beginner">Beginner Friendly</span>
+                    <span class="lessons">20 Lessons</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="path-content">
+            <div class="path-overview">
+                <h2>What is Frontend Development</h2>
+                <p>Frontend development focuses on creating the visual and interactive parts of websites and web applications that users see and interact with in their browsers. Frontend developers bridge the gap between design and backend functionality, creating engaging user experiences.</p>
+
+                <h2>What Frontend Developers Do</h2>
+                <p>Frontend developers create the user-facing components of web applications:</p>
+                <ul>
+                    <li><strong>UI/UX Implementation:</strong> Transform design mockups into functional web interfaces</li>
+                    <li><strong>Interactive Components:</strong> Build dynamic elements that respond to user actions</li>
+                    <li><strong>Cross-browser Compatibility:</strong> Ensure websites work across different browsers and devices</li>
+                    <li><strong>Performance Optimization:</strong> Optimize loading times and user experience</li>
+                    <li><strong>Responsive Design:</strong> Create layouts that adapt to different screen sizes</li>
+                    <li><strong>Framework Integration:</strong> Use modern frameworks to build scalable applications</li>
+                </ul>
+
+                <h2>Why This Career Exists</h2>
+                <p>Frontend development exists because users expect beautiful, fast, and intuitive digital experiences:</p>
+                <ul>
+                    <li><strong>User Experience:</strong> First impressions matter, and frontend creates those impressions</li>
+                    <li><strong>Mobile Revolution:</strong> Responsive design is essential for mobile users</li>
+                    <li><strong>Business Competition:</strong> Companies need standout digital presence</li>
+                    <li><strong>Technology Evolution:</strong> New frameworks and tools constantly improve capabilities</li>
+                    <li><strong>Accessibility:</strong> Inclusive design ensures websites work for everyone</li>
+                </ul>
+            </div>
+
+            <div class="skills-roadmap">
+                <h2>Skills Roadmap</h2>
+                <div class="roadmap-container">
+                    <div class="roadmap-phase">
+                        <h3>Phase 1: Web Foundations (Weeks 1-5)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-mobile"></i>
+                                <span>Responsive Design</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-git"></i>
+                                <span>Version Control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-phase">
+                        <h3>Phase 2: JavaScript Fundamentals (Weeks 6-10)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript ES6+</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>DOM Manipulation</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>Asynchronous JS</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-tools"></i>
+                                <span>Developer Tools</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-phase">
+                        <h3>Phase 3: Modern Frameworks (Weeks 11-15)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cubes"></i>
+                                <span>Component Architecture</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-route"></i>
+                                <span>Routing</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-atom"></i>
+                                <span>State Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-phase">
+                        <h3>Phase 4: Advanced Topics (Weeks 16-20)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fas fa-vial"></i>
+                                <span>Testing</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Performance</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-universal-access"></i>
+                                <span>Accessibility</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Portfolio Projects</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="build-projects">
+                <h2>Build Projects</h2>
+                <p>Frontend projects help you master modern web development techniques and build an impressive portfolio.</p>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Personal Portfolio Website</h3>
+                            <span class="project-difficulty">Beginner</span>
+                        </div>
+                        <p>Create a responsive portfolio website showcasing your work and skills.</p>
+                        <div class="project-tech">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Interactive Todo App</h3>
+                            <span class="project-difficulty">Intermediate</span>
+                        </div>
+                        <p>Build a task management app with add, edit, delete, and filtering functionality.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Local Storage</span>
+                            <span>CSS Modules</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>E-commerce Product Page</h3>
+                            <span class="project-difficulty">Intermediate</span>
+                        </div>
+                        <p>Create a product page with image gallery, reviews, and shopping cart.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>API Integration</span>
+                            <span>Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Weather Dashboard</h3>
+                            <span class="project-difficulty">Intermediate</span>
+                        </div>
+                        <p>Build a weather app that displays current conditions and forecasts.</p>
+                        <div class="project-tech">
+                            <span>API Integration</span>
+                            <span>Charts</span>
+                            <span>Geolocation</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Social Media Dashboard</h3>
+                            <span class="project-difficulty">Advanced</span>
+                        </div>
+                        <p>Create a dashboard for managing social media posts and analytics.</p>
+                        <div class="project-tech">
+                            <span>React Router</span>
+                            <span>Charts Library</span>
+                            <span>Authentication</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Real-time Chat Application</h3>
+                            <span class="project-difficulty">Advanced</span>
+                        </div>
+                        <p>Build a real-time messaging app with multiple chat rooms.</p>
+                        <div class="project-tech">
+                            <span>WebSocket</span>
+                            <span>React</span>
+                            <span>Real-time Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-opportunities">
+                <h2>Career Opportunities</h2>
+                <p>Frontend development offers excellent career prospects with high demand and competitive salaries.</p>
+
+                <div class="career-grid">
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Frontend Developer</h3>
+                        <p>Build and maintain user interfaces for web applications.</p>
+                        <div class="career-details">
+                            <span>Salary: $70K-$110K</span>
+                            <span>Experience: 1-4 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <h3>React Developer</h3>
+                        <p>Specialize in React and modern JavaScript frameworks.</p>
+                        <div class="career-details">
+                            <span>Salary: $80K-$130K</span>
+                            <span>Experience: 2-5 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-mobile"></i>
+                        </div>
+                        <h3>UI/UX Developer</h3>
+                        <p>Focus on user experience and interface design implementation.</p>
+                        <div class="career-details">
+                            <span>Salary: $75K-$120K</span>
+                            <span>Experience: 2-5 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Senior Frontend Developer</h3>
+                        <p>Lead frontend development and mentor junior developers.</p>
+                        <div class="career-details">
+                            <span>Salary: $110K-$160K</span>
+                            <span>Experience: 4-7 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Frontend Architect</h3>
+                        <p>Design frontend architecture and technical solutions.</p>
+                        <div class="career-details">
+                            <span>Salary: $130K-$190K</span>
+                            <span>Experience: 6-10 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3>Full-Stack Developer</h3>
+                        <p>Work across the entire technology stack.</p>
+                        <div class="career-details">
+                            <span>Salary: $90K-$150K</span>
+                            <span>Experience: 3-8 years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-list">
+                <h2>Start Learning (Courses)</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>HTML & CSS Fundamentals</h3>
+                            <span class="course-duration">4 lessons</span>
+                        </div>
+                        <p>Master the building blocks of web development with semantic HTML and modern CSS.</p>
+                        <div class="course-tags">
+                            <span>Beginner</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Responsive Web Design</h3>
+                            <span class="course-duration">3 lessons</span>
+                        </div>
+                        <p>Learn CSS Grid, Flexbox, and media queries for responsive layouts.</p>
+                        <div class="course-tags">
+                            <span>Beginner</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>JavaScript Basics</h3>
+                            <span class="course-duration">4 lessons</span>
+                        </div>
+                        <p>Master JavaScript fundamentals, DOM manipulation, and ES6+ features.</p>
+                        <div class="course-tags">
+                            <span>Intermediate</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>React Fundamentals</h3>
+                            <span class="course-duration">4 lessons</span>
+                        </div>
+                        <p>Learn React components, props, state, and lifecycle methods.</p>
+                        <div class="course-tags">
+                            <span>Intermediate</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Advanced React</h3>
+                            <span class="course-duration">3 lessons</span>
+                        </div>
+                        <p>Master hooks, context, and advanced React patterns.</p>
+                        <div class="course-tags">
+                            <span>Advanced</span>
+                            <span>React</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>State Management</h3>
+                            <span class="course-duration">2 lessons</span>
+                        </div>
+                        <p>Learn Redux, Context API, and state management solutions.</p>
+                        <div class="course-tags">
+                            <span>Advanced</span>
+                            <span>Redux</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Testing Frontend Apps</h3>
+                            <span class="course-duration">2 lessons</span>
+                        </div>
+                        <p>Master unit testing, integration testing, and testing best practices.</p>
+                        <div class="course-tags">
+                            <span>Advanced</span>
+                            <span>Testing</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Performance Optimization</h3>
+                            <span class="course-duration">2 lessons</span>
+                        </div>
+                        <p>Optimize loading times, bundle size, and runtime performance.</p>
+                        <div class="course-tags">
+                            <span>Advanced</span>
+                            <span>Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="path-resources">
+                <h2>Additional Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-book"></i>
+                        <h4>Recommended Books</h4>
+                        <p>"Eloquent JavaScript", "CSS Secrets", "React Up and Running", "JavaScript: The Good Parts"</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-tools"></i>
+                        <h4>Tools & Frameworks</h4>
+                        <p>VS Code, Chrome DevTools, React, Vue.js, Angular, Sass, Webpack, npm/yarn</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Communities</h4>
+                        <p>React subreddit, CSS-Tricks, Dev.to, Stack Overflow, Frontend-focused Slack communities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+			<div class="container footer-inner">
+				<div>© <span id="year"></span> OpenLearn</div>
+				<div class="footer-links">
+					<a href="#">Privacy</a>
+					<a href="#">Terms</a>
+					<a href="#contact">Contact</a>
+				</div>
+			</div>
+		</footer>
+
+    <script>
+        const yearEl = document.getElementById('year') || document.getElementById('yearFooter');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+    <script src="../nav.js"></script>
+</body>
+</html>
+
+
+
+
+

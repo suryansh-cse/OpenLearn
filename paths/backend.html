@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development Path - OpenLearn</title>
+    <link rel="stylesheet" href="../courses_Style.css">
+    <script src="../Backend.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="../index.html">Open<span>Learn</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
+<a href="../index.html">Home</a>
+<a href="../paths.html" class="active" aria-current="page">Paths</a>
+<a href="../courses.html">Courses</a>
+<a href="../careers.html">Careers</a>
+<a href="../index.html" class="cta">Get Started</a>
+</nav>
+        </div>
+    </header>
+
+    <!-- Path Hero -->
+    <section class="course-hero path-hero">
+        <div class="container">
+            <h1>Backend Development</h1>
+            <p>Build robust server-side applications with databases and APIs. Learn backend programming, database design, and create scalable web services.</p>
+            <div class="meta">
+                <span>🖥️ Intermediate Level</span>
+                <span>⏱️ 18 lessons total</span>
+                <span>🎯 Scalable applications</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Path Overview -->
+    <section class="course-section">
+        <div class="container">
+            <h2 class="section-title">Path Overview</h2>
+            <p>This backend development path focuses on server-side programming, database management, and API design. You'll learn to build secure, scalable, and maintainable backend systems.</p>
+
+            <div class="path-roadmap">
+                <h3>Learning Roadmap</h3>
+                <div class="roadmap-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Programming Fundamentals</h4>
+                            <p>Backend programming languages and concepts</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Database Design</h4>
+                            <p>SQL, NoSQL, and data modeling</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>API Development</h4>
+                            <p>REST APIs, authentication, and security</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Deployment & Scaling</h4>
+                            <p>Production deployment and performance optimization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses in Path -->
+    <section class="course-section">
+        <div class="container">
+            <h2 class="section-title">Courses in This Path</h2>
+            <div class="courses-grid">
+                <!-- Course 1 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">🐍</div>
+                    <div class="course-content">
+                        <h3>Python Programming</h3>
+                        <p>Learn Python programming fundamentals</p>
+                        <div class="course-meta">
+                            <span>10 lessons</span>
+                            <span>Beginner</span>
+                        </div>
+                        <a href="../courses/phython/phython.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">🟢</div>
+                    <div class="course-content">
+                        <h3>Backend Development with Node.js</h3>
+                        <p>Create web applications using Node.js and Express frameworks</p>
+                        <div class="course-meta">
+                            <span>11 lessons</span>
+                            <span>Intermediate</span>
+                        </div>
+                        <a href="../courses/nodejs/nodejs.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">☕</div>
+                    <div class="course-content">
+                        <h3>Java masterclass</h3>
+                        <p>Master Java programming concepts and object-oriented design patterns</p>
+                        <div class="course-meta">
+                            <span>11 lessons</span>
+                            <span>Intermediate</span>
+                        </div>
+                        <a href="../courses/java/Java.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card">
+                    <div class="course-thumbnail">🗄️</div>
+                    <div class="course-content">
+                        <h3>Database Design and SQL</h3>
+                        <p>Learn database concepts, SQL queries, and optimization techniques</p>
+                        <div class="course-meta">
+                            <span>7 lessons</span>
+                            <span>Beginner</span>
+                        </div>
+                        <a href="../courses/data-base/database.html" class="btn-primary">Start Course</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Development Path - OpenLearn</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../paths.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+      <header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="../index.html">Open<span>Learn</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<nav class="main-nav" id="mainNav">
+<a href="../index.html">Home</a>
+<a href="../paths.html" class="active" aria-current="page">Paths</a>
+<a href="../courses.html">Courses</a>
+<a href="../careers.html">Careers</a>
+<a href="../index.html" class="cta">Get Started</a>
+</nav>
+</div>
+</header>
+
+    <div class="path-detail-container">
+        <div class="path-header">
+            <div class="path-icon">
+                <i class="fas fa-server"></i>
+            </div>
+            <div class="path-info">
+                <h1>Backend Development</h1>
+                <p class="path-description">Build robust server-side applications with databases and APIs</p>
+                <div class="path-meta">
+                    <span class="level intermediate">Intermediate</span>
+                    <span class="lessons">18 Lessons</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="path-content">
+            <div class="path-overview">
+                <h2>What is Backend Development</h2>
+                <p>Backend development focuses on the server-side of web applications, handling business logic, database operations, and API creation. Backend developers build the foundation that powers modern web and mobile applications, ensuring data security, performance, and scalability.</p>
+
+                <h2>What Backend Developers Do</h2>
+                <p>Backend developers create the server-side logic and infrastructure that powers applications:</p>
+                <ul>
+                    <li><strong>API Development:</strong> Design and implement RESTful APIs and GraphQL endpoints</li>
+                    <li><strong>Database Design:</strong> Create efficient database schemas and manage data relationships</li>
+                    <li><strong>Server Architecture:</strong> Build scalable server applications and microservices</li>
+                    <li><strong>Authentication & Security:</strong> Implement secure authentication and authorization systems</li>
+                    <li><strong>Performance Optimization:</strong> Optimize database queries and server response times</li>
+                    <li><strong>System Integration:</strong> Connect with third-party services and APIs</li>
+                </ul>
+
+                <h2>Why This Career Exists</h2>
+                <p>Backend development exists because every application needs a reliable foundation:</p>
+                <ul>
+                    <li><strong>Data Management:</strong> Applications need to store, retrieve, and process data efficiently</li>
+                    <li><strong>Business Logic:</strong> Complex business rules require server-side processing</li>
+                    <li><strong>Security Requirements:</strong> Sensitive operations must be protected on the server</li>
+                    <li><strong>Scalability Needs:</strong> Modern applications must handle thousands of concurrent users</li>
+                    <li><strong>Integration Demands:</strong> Systems need to communicate with various services and APIs</li>
+                </ul>
+            </div>
+
+            <div class="skills-roadmap">
+                <h2>Skills Roadmap</h2>
+                <div class="roadmap-container">
+                    <div class="roadmap-phase">
+                        <h3>Phase 1: Programming Foundations (Weeks 1-4)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python/Node.js/Java</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>Programming Logic</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-terminal"></i>
+                                <span>Command Line</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-git"></i>
+                                <span>Version Control</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-phase">
+                        <h3>Phase 2: Database & Data Management (Weeks 5-8)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>SQL Databases</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>MongoDB/NoSQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-sitemap"></i>
+                                <span>Database Design</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-search"></i>
+                                <span>Query Optimization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-phase">
+                        <h3>Phase 3: API Development & Frameworks (Weeks 9-14)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fas fa-exchange-alt"></i>
+                                <span>REST APIs</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Authentication</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cubes"></i>
+                                <span>Express/Django/Spring</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-file-code"></i>
+                                <span>API Documentation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roadmap-phase">
+                        <h3>Phase 4: Advanced Topics (Weeks 15-18)</h3>
+                        <div class="phase-skills">
+                            <div class="skill-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Performance</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Cloud Deployment</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-network-wired"></i>
+                                <span>Microservices</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-bug"></i>
+                                <span>Testing & Debugging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="build-projects">
+                <h2>Build Projects</h2>
+                <p>Backend projects focus on building robust APIs, databases, and server applications that power modern web and mobile apps.</p>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>REST API for Blog Platform</h3>
+                            <span class="project-difficulty">Intermediate</span>
+                        </div>
+                        <p>Build a complete REST API for a blog with posts, users, comments, and authentication.</p>
+                        <div class="project-tech">
+                            <span>Node.js/Express</span>
+                            <span>MongoDB</span>
+                            <span>JWT Auth</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>E-commerce Backend</h3>
+                            <span class="project-difficulty">Advanced</span>
+                        </div>
+                        <p>Create a backend for an online store with products, orders, payments, and inventory.</p>
+                        <div class="project-tech">
+                            <span>Python/Django</span>
+                            <span>PostgreSQL</span>
+                            <span>Stripe API</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Social Media API</h3>
+                            <span class="project-difficulty">Advanced</span>
+                        </div>
+                        <p>Build a social platform backend with posts, likes, follows, and real-time notifications.</p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>WebSocket</span>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Task Management System</h3>
+                            <span class="project-difficulty">Intermediate</span>
+                        </div>
+                        <p>Develop a project management API with teams, tasks, deadlines, and progress tracking.</p>
+                        <div class="project-tech">
+                            <span>Java/Spring</span>
+                            <span>MySQL</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Real-time Chat Application</h3>
+                            <span class="project-difficulty">Advanced</span>
+                        </div>
+                        <p>Build a chat system with real-time messaging, rooms, and file sharing.</p>
+                        <div class="project-tech">
+                            <span>Node.js</span>
+                            <span>Socket.io</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Analytics Dashboard API</h3>
+                            <span class="project-difficulty">Intermediate</span>
+                        </div>
+                        <p>Create an API for collecting and analyzing user behavior data and metrics.</p>
+                        <div class="project-tech">
+                            <span>Python/FastAPI</span>
+                            <span>TimescaleDB</span>
+                            <span>Data Processing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="career-opportunities">
+                <h2>Career Opportunities</h2>
+                <p>Backend development offers diverse career paths with strong demand across all industries.</p>
+
+                <div class="career-grid">
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend Developer</h3>
+                        <p>Build and maintain server-side applications and APIs.</p>
+                        <div class="career-details">
+                            <span>Salary: $90K-$130K</span>
+                            <span>Experience: 2-5 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Full-Stack Developer</h3>
+                        <p>Work on both frontend and backend components of applications.</p>
+                        <div class="career-details">
+                            <span>Salary: $95K-$140K</span>
+                            <span>Experience: 3-6 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>API Developer</h3>
+                        <p>Specialize in designing and implementing APIs and microservices.</p>
+                        <div class="career-details">
+                            <span>Salary: $100K-$150K</span>
+                            <span>Experience: 3-7 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Senior Backend Engineer</h3>
+                        <p>Lead backend development and mentor junior developers.</p>
+                        <div class="career-details">
+                            <span>Salary: $130K-$180K</span>
+                            <span>Experience: 5-8 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Backend Architect</h3>
+                        <p>Design scalable backend architectures and technical solutions.</p>
+                        <div class="career-details">
+                            <span>Salary: $150K-$220K</span>
+                            <span>Experience: 7-12 years</span>
+                        </div>
+                    </div>
+
+                    <div class="career-card">
+                        <div class="career-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Engineering Manager</h3>
+                        <p>Lead backend engineering teams and manage technical projects.</p>
+                        <div class="career-details">
+                            <span>Salary: $160K-$240K</span>
+                            <span>Experience: 8-15 years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-list">
+                <h2>Start Learning (Courses)</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Python Programming</h3>
+                            <span class="course-duration">4 lessons</span>
+                        </div>
+                        <p>Master Python fundamentals including data structures and object-oriented programming.</p>
+                        <div class="course-tags">
+                            <span>Beginner</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Node.js Fundamentals</h3>
+                            <span class="course-duration">3 lessons</span>
+                        </div>
+                        <p>Learn Node.js runtime, npm, and asynchronous programming patterns.</p>
+                        <div class="course-tags">
+                            <span>Beginner</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Database Design</h3>
+                            <span class="course-duration">4 lessons</span>
+                        </div>
+                        <p>Master SQL databases, normalization, and database design principles.</p>
+                        <div class="course-tags">
+                            <span>Intermediate</span>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Express.js Framework</h3>
+                            <span class="course-duration">3 lessons</span>
+                        </div>
+                        <p>Build web applications with Express.js, middleware, and routing.</p>
+                        <div class="course-tags">
+                            <span>Intermediate</span>
+                            <span>Express</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>REST API Design</h3>
+                            <span class="course-duration">3 lessons</span>
+                        </div>
+                        <p>Learn REST principles, HTTP methods, and API design best practices.</p>
+                        <div class="course-tags">
+                            <span>Intermediate</span>
+                            <span>APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Authentication & Security</h3>
+                            <span class="course-duration">2 lessons</span>
+                        </div>
+                        <p>Implement JWT authentication, password hashing, and security best practices.</p>
+                        <div class="course-tags">
+                            <span>Advanced</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>MongoDB & NoSQL</h3>
+                            <span class="course-duration">3 lessons</span>
+                        </div>
+                        <p>Learn NoSQL databases, MongoDB operations, and data modeling.</p>
+                        <div class="course-tags">
+                            <span>Intermediate</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <div class="course-card">
+                        <div class="course-header">
+                            <h3>Testing & Deployment</h3>
+                            <span class="course-duration">2 lessons</span>
+                        </div>
+                        <p>Master unit testing, integration testing, and deployment strategies.</p>
+                        <div class="course-tags">
+                            <span>Advanced</span>
+                            <span>Testing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="path-resources">
+                <h2>Additional Resources</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <i class="fas fa-book"></i>
+                        <h4>Recommended Books</h4>
+                        <p>"Clean Code", "Design Patterns", "RESTful Web APIs", "Database System Concepts"</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-tools"></i>
+                        <h4>Tools & Frameworks</h4>
+                        <p>Node.js, Express, Django, Spring Boot, PostgreSQL, MongoDB, Redis, Docker, Postman</p>
+                    </div>
+                    <div class="resource-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Communities</h4>
+                        <p>Stack Overflow, Reddit (r/node, r/Python), GitHub, Dev.to, Backend-focused Slack communities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <footer class="site-footer">
+<div class="container footer-inner">
+<div>� <span id="year"></span> OpenLearn</div>
+<div class="footer-links">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</footer>
+
+    <script src="../nav.js"></script>
+</body>
+</html>
+
+
+
+
+
