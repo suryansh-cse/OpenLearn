@@ -1,12 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding and responsive viewport for mobile devices -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenLearn</title>
-    
+    <meta name="description" content="OpenLearn — Learn the right thing, not everything. Focused courses for modern skills.">
+
+    <title>OpenLearn | Learn the right thing</title>
+
+    <!-- Google Font: clean, modern sans-serif for educational UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- global.css = colors + reset | home.css = this page layout only -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
-    
+
+<body class="home-page">
+
+    <!-- ==================================================================
+         SITE HEADER (light background)
+         Wraps the navbar and hero so they share the same light theme.
+         ================================================================== -->
+    <header class="site-header">
+
+        <!-- --------------------------------------------------------------
+             NAVBAR
+             Logo (left), main links (center), Sign In (right).
+             Uses flexbox — see .navbar in home.css
+             -------------------------------------------------------------- -->
+        <nav class="navbar" aria-label="Main navigation">
+            <!-- Brand logo — links to top of homepage -->
+            <a class="navbar-logo" href="#" aria-label="OpenLearn home">
+                <img src="assets/logo.png" alt="OpenLearn logo" width="40" height="40">
+                <span class="navbar-brand-text">OpenLearn</span>
+            </a>
+
+            <!-- Primary navigation links -->
+            <ul class="navbar-links">
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#paths">Paths</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <!-- Call-to-action for returning users -->
+            <a class="btn-sign-in" href="#sign-in">Sign In</a>
+        </nav>
+
+        <!-- --------------------------------------------------------------
+             HERO SECTION
+             Two-column layout: message + search (left), visual placeholder (right)
+             -------------------------------------------------------------- -->
+        <section class="hero-section" aria-labelledby="hero-heading">
+            <div class="hero-inner">
+
+                <!-- LEFT COLUMN: headline, description, search, topic chips -->
+                <div class="hero-content">
+                    <h1 id="hero-heading" class="hero-title">
+                        Learn the right thing, not everything.
+                    </h1>
+
+                    <p class="hero-description">
+                        OpenLearn helps you focus on skills that matter — structured paths,
+                        curated courses, and clear career direction without the noise.
+                    </p>
+
+                    <!-- Visual-only search UI (no JavaScript). type="button" prevents form submit. -->
+                    <div class="search-bar" role="search" aria-label="Search courses">
+                        <label class="visually-hidden" for="course-search">Search courses</label>
+                        <input
+                            type="search"
+                            id="course-search"
+                            class="search-bar-input"
+                            placeholder="Search courses, topics, or skills…"
+                            autocomplete="off"
+                        >
+                        <button type="button" class="search-bar-button" aria-label="Search">
+                            Search
+                        </button>
+                    </div>
+
+                    <!-- Quick topic filters — styled as chips, not functional yet -->
+                    <div class="category-chips" aria-label="Popular topics">
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">AI</span>
+                        <span class="chip">Web Dev</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: placeholder for future animation / illustration -->
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-visual-box">
+                        <p class="hero-visual-label">Future animation area</p>
+                        <span class="hero-visual-hint">Your illustration or Lottie animation goes here</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </header>
+
+    <!-- ==================================================================
+         MAIN CONTENT
+         The showcase is the primary content block below the hero.
+         ================================================================== -->
+    <main>
+
+        <!-- --------------------------------------------------------------
+             SHOWCASE SECTION (dark background)
+             Full-width band for featured content / future animated icons.
+             -------------------------------------------------------------- -->
+        <section class="showcase-section" aria-labelledby="showcase-heading">
+            <div class="showcase-content">
+                <h2 id="showcase-heading" class="showcase-title">
+                    Explore what matters.
+                </h2>
+                <p class="showcase-subtitle">
+                    A focused space for tech topics you will animate later — icons float here visually.
+                </p>
+
+                <!-- Placeholder grid mimicking floating tech icons (static layout only) -->
+                <div class="floating-icons-area" aria-label="Technology topics placeholder">
+                    <div class="icon-placeholder">HTML</div>
+                    <div class="icon-placeholder">CSS</div>
+                    <div class="icon-placeholder">JS</div>
+                    <div class="icon-placeholder">Python</div>
+                    <div class="icon-placeholder">AI</div>
+                    <div class="icon-placeholder">Git</div>
+                    <div class="icon-placeholder">React</div>
+                    <div class="icon-placeholder">SQL</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================================================================
+         FOOTER (light background)
+         Four columns: brand, learn links, company links, legal links.
+         ================================================================== -->
+    <footer class="footer-section">
+        <div class="footer-inner">
+
+            <!-- Column 1: Logo and mission -->
+            <div class="footer-column footer-brand">
+                <a class="footer-logo" href="#" aria-label="OpenLearn home">
+                    <img src="assets/logo.png" alt="" width="36" height="36">
+                    <span>OpenLearn</span>
+                </a>
+                <p class="footer-mission">
+                    We help learners build real skills with clarity, structure, and purpose.
+                </p>
+            </div>
+
+            <!-- Column 2: Learning links -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Learn</h3>
+                <ul class="footer-links">
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#paths">Paths</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Company links -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Legal and account -->
+            <div class="footer-column">
+                <h3 class="footer-heading">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms &amp; Conditions</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom bar: copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 OpenLearn. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
