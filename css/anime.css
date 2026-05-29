@@ -1,0 +1,156 @@
+/* ==========================================================================
+   ANIME.CSS — Styles for the 4 pillar cards layout animation (hero right side)
+
+   WHY THE ORIGINAL CSS FAILED:
+   Every grid rule was written as "#layout .grid-layout" and "#layout [data-grid=...]",
+   but index.html had NO element with id="layout". Those selectors never matched,
+   so the cards had no grid layout and anime.js had nothing meaningful to animate.
+
+   FIX: Wrap the animation area in <div id="layout"> and style cards below.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   OUTER WRAPPER (#layout)
+   Required by anime.js docs — grid state selectors are scoped under #layout.
+   Fills the hero right column and centers the demo.
+   -------------------------------------------------------------------------- */
+#layout.pillar-animation {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fixed-size frame so cards have room to move during layout morphs */
+.pillar-animation-frame {
+  width: 100%;
+  max-width: 340px;
+  min-height: 320px;
+  padding: var(--space-sm);
+  background-color: rgba(13, 13, 13, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+
+/* --------------------------------------------------------------------------
+   GRID CONTAINER (.layout-container)
+   anime.js tracks THIS element — see createLayout('.layout-container') in anime.js
+   data-grid="1" through "4" switches which CSS grid positions apply to each card.
+   -------------------------------------------------------------------------- */
+#layout .layout-container {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+}
+
+#layout .grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+
+/* --------------------------------------------------------------------------
+   GRID STATE 1 (default — matches data-grid="1" in HTML)
+   Asymmetric bento-style layout: tall cards on left and right.
+   -------------------------------------------------------------------------- */
+#layout [data-grid="1"] .item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+#layout [data-grid="1"] .item:nth-child(2) { grid-column: 2; grid-row: 1; }
+#layout [data-grid="1"] .item:nth-child(3) { grid-column: 1; grid-row: 3; }
+#layout [data-grid="1"] .item:nth-child(4) { grid-column: 2; grid-row: 2 / 4; }
+
+
+/* --------------------------------------------------------------------------
+   GRID STATE 2 — 3-column grid, items 1 and 4 span full height
+   -------------------------------------------------------------------------- */
+#layout [data-grid="2"] {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+#layout [data-grid="2"] .item:nth-child(1),
+#layout [data-grid="2"] .item:nth-child(4) {
+  grid-row: 1 / 3;
+}
+
+
+/* --------------------------------------------------------------------------
+   GRID STATE 3 — mirrored bento layout (different card positions)
+   -------------------------------------------------------------------------- */
+#layout [data-grid="3"] .item:nth-child(4) { grid-column: 1; grid-row: 1; }
+#layout [data-grid="3"] .item:nth-child(3) { grid-column: 2; grid-row: 1 / 3; }
+#layout [data-grid="3"] .item:nth-child(2) { grid-column: 1; grid-row: 2 / 4; }
+#layout [data-grid="3"] .item:nth-child(1) { grid-column: 2; grid-row: 3; }
+
+
+/* --------------------------------------------------------------------------
+   GRID STATE 4 — 3 columns; items 3 and 4 share a tall right column
+   -------------------------------------------------------------------------- */
+#layout [data-grid="4"] {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+#layout [data-grid="4"] .item:nth-child(1) { grid-column: 1; grid-row: 1; }
+#layout [data-grid="4"] .item:nth-child(2) { grid-column: 1; grid-row: 2; }
+#layout [data-grid="4"] .item:nth-child(3),
+#layout [data-grid="4"] .item:nth-child(4) {
+  grid-row: 1 / 3;
+}
+
+
+/* --------------------------------------------------------------------------
+   PILLAR CARDS (.item)
+   The 4 words: Learn, Build, Solve, Ship — styled as premium monochrome cards.
+   anime.js animates their position/size when grid rules change.
+   -------------------------------------------------------------------------- */
+#layout .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: var(--space-sm);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--bg-light);
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(217, 217, 217, 0.15);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 14px rgba(13, 13, 13, 0.12);
+  user-select: none;
+}
+
+/* Subtle variation — first card slightly lighter for visual hierarchy */
+#layout .item:nth-child(1) {
+  background-color: #1a1a1a;
+}
+
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE — shrink frame on small screens
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .pillar-animation-frame {
+    max-width: 420px;
+    min-height: 260px;
+  }
+
+  #layout .layout-container {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pillar-animation-frame {
+    min-height: 220px;
+  }
+
+  #layout .item {
+    font-size: 0.8125rem;
+    min-height: 52px;
+  }
+}

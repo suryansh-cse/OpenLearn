@@ -16,21 +16,27 @@
     <!-- global.css = colors + reset | home.css = this page layout only -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/anime.css">
+
+    <!--
+      Import map: lets anime.js use "import … from 'animejs'" without npm/Vite.
+      Maps the package name to a browser-ready ES module on jsDelivr CDN.
+    -->
+    <script type="importmap">
+    {
+      "imports": {
+        "animejs": "https://cdn.jsdelivr.net/npm/animejs@4.4.1/+esm"
+      }
+    }
+    </script>
 </head>
 
 <body class="home-page">
 
-    <!-- ==================================================================
-         SITE HEADER (light background)
-         Wraps the navbar and hero so they share the same light theme.
-         ================================================================== -->
+
     <header class="site-header">
 
-        <!-- --------------------------------------------------------------
-             NAVBAR
-             Logo (left), main links (center), Sign In (right).
-             Uses flexbox — see .navbar in home.css
-             -------------------------------------------------------------- -->
+        
         <nav class="navbar" aria-label="Main navigation">
             <!-- Brand logo — links to top of homepage -->
             <a class="navbar-logo" href="#" aria-label="OpenLearn home">
@@ -50,10 +56,7 @@
             <a class="btn-sign-in" href="#sign-in">Sign In</a>
         </nav>
 
-        <!-- --------------------------------------------------------------
-             HERO SECTION
-             Two-column layout: message + search (left), visual placeholder (right)
-             -------------------------------------------------------------- -->
+       
         <section class="hero-section" aria-labelledby="hero-heading">
             <div class="hero-inner">
 
@@ -93,11 +96,20 @@
                     </div>
                 </div>
 
-                <!-- RIGHT COLUMN: placeholder for future animation / illustration -->
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="hero-visual-box">
-                        <p class="hero-visual-label">Future animation area</p>
-                        <span class="hero-visual-hint">Your illustration or Lottie animation goes here</span>
+                <!--
+                  RIGHT COLUMN: 4 pillar cards with anime.js layout animation
+                  id="layout" is REQUIRED — anime.css grid rules are scoped under #layout
+                -->
+                <div class="hero-visual">
+                    <div id="layout" class="pillar-animation">
+                        <div class="pillar-animation-frame">
+                            <div class="layout-container grid-layout" data-grid="1">
+                                <div class="item">Learn</div>
+                                <div class="item">Build</div>
+                                <div class="item">Solve</div>
+                                <div class="item">Ship</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -105,16 +117,10 @@
         </section>
     </header>
 
-    <!-- ==================================================================
-         MAIN CONTENT
-         The showcase is the primary content block below the hero.
-         ================================================================== -->
+    
     <main>
 
-        <!-- --------------------------------------------------------------
-             SHOWCASE SECTION (dark background)
-             Full-width band for featured content / future animated icons.
-             -------------------------------------------------------------- -->
+       
         <section class="showcase-section" aria-labelledby="showcase-heading">
             <div class="showcase-content">
                 <h2 id="showcase-heading" class="showcase-title">
@@ -140,10 +146,7 @@
 
     </main>
 
-    <!-- ==================================================================
-         FOOTER (light background)
-         Four columns: brand, learn links, company links, legal links.
-         ================================================================== -->
+    
     <footer class="footer-section">
         <div class="footer-inner">
 
@@ -195,6 +198,10 @@
             <p>&copy; 2026 OpenLearn. All rights reserved.</p>
         </div>
     </footer>
-
+    <!--
+      Load anime.js ONCE at the end of body (type="module" = ES modules + deferred).
+      Must run after the layout markup above exists in the DOM.
+    -->
+    <script src="js/anime.js" type="module"></script>
 </body>
 </html>
