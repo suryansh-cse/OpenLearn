@@ -3,40 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <meta name="description" content="OpenLearn Courses — Featured learning paths for modern skills.">
+    <title>OpenLearn | Courses</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/courses.css">
-   
+    <link rel="stylesheet" href="css/featured-courses.css">
 </head>
 <body class="page-courses">
 
     <header class="site-header">
-    <nav class="navbar" aria-label="Main navigation">
-        <a class="navbar-logo" href="index.html" aria-label="OpenLearn home">
-            <img src="assets/logo.png" alt="" width="56" height="56">
-            <span class="navbar-brand-text">OpenLearn</span>
-        </a>
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="navbar-logo" href="index.html" aria-label="OpenLearn home">
+                <img src="assets/logo.png" alt="" width="56" height="56">
+                <span class="navbar-brand-text">OpenLearn</span>
+            </a>
 
-        <!-- Primary navigation links -->
-        <ul class="navbar-links">
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="#paths">Paths</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
+            <ul class="navbar-links">
+                <li><a href="courses.html" aria-current="page">Courses</a></li>
+                <li><a href="#paths">Paths</a></li>
+                <li><a href="#careers">Careers</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
 
-        <!-- Call-to-action for returning users -->
-        <a class="btn-sign-in" href="#sign-in">Sign In</a>
-    </nav>
+            <a class="btn-sign-in" href="#sign-in">Sign In</a>
+        </nav>
     </header>
 
-    <aside class="side-bar" aria-label="Course navigation">
-       
-    </aside>
+    <!-- Two-column shell: sidebar navigation + scrollable course catalog -->
+    <div class="courses-layout">
+
+        <aside class="side-bar" aria-label="Course catalog navigation">
+
+            <!-- Sidebar header — title + total count -->
+            <div class="side-bar__header">
+                <h2 class="side-bar__title">Course Catalog</h2>
+                <span class="side-bar__count">9 paths</span>
+            </div>
+
+            <!-- Primary navigation — categories + nested courses -->
+            <nav class="side-bar__nav" aria-label="Course categories">
+
+                <!-- Overview -->
+                <ul class="side-bar__group">
+                    <li>
+                        <a class="side-bar__link" href="#courses">
+                            <span class="side-bar__link-icon" aria-hidden="true">◎</span>
+                            All Courses
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="side-bar__divider" role="presentation"></div>
+
+                <!-- Web Foundations -->
+                <div class="side-bar__section">
+                    <p class="side-bar__label">Web Foundations</p>
+                    <ul class="side-bar__group">
+                        <li>
+                            <a class="side-bar__link" href="#web-foundations">
+                                <span class="side-bar__link-icon" aria-hidden="true">◇</span>
+                                <span class="side-bar__link-text side-bar__link-text--long">Overview</span>
+                                <span class="side-bar__link-text side-bar__link-text--short">Web Foundations</span>
+                                <span class="side-bar__badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-html">HTML</a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-css">CSS</a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-javascript">JavaScript</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Programming -->
+                <div class="side-bar__section">
+                    <p class="side-bar__label">Programming</p>
+                    <ul class="side-bar__group">
+                        <li>
+                            <a class="side-bar__link" href="#programming">
+                                <span class="side-bar__link-icon" aria-hidden="true">◇</span>
+                                <span class="side-bar__link-text side-bar__link-text--long">Overview</span>
+                                <span class="side-bar__link-text side-bar__link-text--short">Programming</span>
+                                <span class="side-bar__badge">2</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-dsa">DSA</a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-problem-solving">Problem Solving</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Growth -->
+                <div class="side-bar__section">
+                    <p class="side-bar__label">Tools &amp; Growth</p>
+                    <ul class="side-bar__group">
+                        <li>
+                            <a class="side-bar__link" href="#tools">
+                                <span class="side-bar__link-icon" aria-hidden="true">◇</span>
+                                <span class="side-bar__link-text side-bar__link-text--long">Overview</span>
+                                <span class="side-bar__link-text side-bar__link-text--short">Tools &amp; Growth</span>
+                                <span class="side-bar__badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-git">Git &amp; GitHub</a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-webdev">Web Development</a>
+                        </li>
+                        <li>
+                            <a class="side-bar__sublink" href="#course-ai">AI</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="side-bar__divider" role="presentation"></div>
+
+                <!-- Featured shortcut -->
+                <ul class="side-bar__group">
+                    <li>
+                        <a class="side-bar__link side-bar__link--featured" href="#course-python">
+                            <span class="side-bar__link-icon" aria-hidden="true">★</span>
+                            Python
+                            <span class="side-bar__badge side-bar__badge--featured">Featured</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Sidebar footer -->
+            <div class="side-bar__footer">
+                <a class="side-bar__footer-link" href="index.html">← Back to Home</a>
+            </div>
+
+        </aside>
+
+        <main class="course-content" id="courses">
+
+            <!-- Page header -->
+            <header class="courses-page-header">
+                <h1 class="courses-page-title">Featured Courses</h1>
+                <p class="courses-page-subtitle">Learn the right thing, not everything.</p>
+            </header>
+
+            <!-- Featured spotlight — primary course -->
+            <section class="course-spotlight" id="course-python" aria-labelledby="spotlight-heading">
+                <p class="course-spotlight__eyebrow">Featured Path</p>
+
+                <article class="course-card course-card--spotlight">
+                    <div class="course-card__header">
+                        <div class="course-card__icon" aria-hidden="true">Py</div>
+                        <div class="course-card__intro">
+                            <h2 id="spotlight-heading" class="course-card__title">Python</h2>
+                            <p class="course-card__desc">
+                                Build real apps, automate tasks, and think in clean code — our most recommended starting path.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="course-card__details">
+                        <div class="course-card__meta">
+                            <span class="course-card__level">Beginner → Advanced</span>
+                            <span class="course-card__dot" aria-hidden="true"></span>
+                            <span class="course-card__duration">3 Week Guided Path</span>
+                        </div>
+                        <span class="course-card__badge">Roadmap Included</span>
+                    </div>
+
+                    <a class="course-card__cta course-card__cta--primary" href="#">Start Learning</a>
+                </article>
+            </section>
+
+            <!-- Web Foundations group -->
+            <section class="course-group" id="web-foundations" aria-labelledby="web-foundations-heading">
+                <header class="course-group__header">
+                    <h2 id="web-foundations-heading" class="course-group__title">Web Foundations</h2>
+                    <p class="course-group__desc">Core building blocks for every web developer.</p>
+                </header>
+
+                <div class="course-grid course-grid--3">
+                    <article class="course-card" id="course-html">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">HTML</div>
+                            <h3 class="course-card__title">HTML</h3>
+                        </div>
+                        <p class="course-card__desc">Structure the web with semantic, accessible markup.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">2 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+
+                    <article class="course-card" id="course-css">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">CSS</div>
+                            <h3 class="course-card__title">CSS</h3>
+                        </div>
+                        <p class="course-card__desc">Design polished interfaces with layout and typography.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">2 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+
+                    <article class="course-card" id="course-javascript">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">JS</div>
+                            <h3 class="course-card__title">JavaScript</h3>
+                        </div>
+                        <p class="course-card__desc">Add interactivity and logic to every page you build.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">4 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Programming group -->
+            <section class="course-group" id="programming" aria-labelledby="programming-heading">
+                <header class="course-group__header">
+                    <h2 id="programming-heading" class="course-group__title">Programming &amp; Logic</h2>
+                    <p class="course-group__desc">Sharpen how you think, solve, and write efficient code.</p>
+                </header>
+
+                <div class="course-grid course-grid--2">
+                    <article class="course-card" id="course-dsa">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">DSA</div>
+                            <h3 class="course-card__title">DSA</h3>
+                        </div>
+                        <p class="course-card__desc">Master data structures and algorithms step by step.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">6 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+
+                    <article class="course-card" id="course-problem-solving">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">PS</div>
+                            <h3 class="course-card__title">Problem Solving</h3>
+                        </div>
+                        <p class="course-card__desc">Break down complex challenges with structured thinking.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">4 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Tools & Growth group -->
+            <section class="course-group" id="tools" aria-labelledby="tools-heading">
+                <header class="course-group__header">
+                    <h2 id="tools-heading" class="course-group__title">Tools &amp; Growth</h2>
+                    <p class="course-group__desc">Ship projects, collaborate, and stay ahead with modern skills.</p>
+                </header>
+
+                <div class="course-grid course-grid--3">
+                    <article class="course-card" id="course-git">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">Git</div>
+                            <h3 class="course-card__title">Git &amp; GitHub</h3>
+                        </div>
+                        <p class="course-card__desc">Version control and collaboration for every developer.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">1 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+
+                    <article class="course-card" id="course-webdev">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">Web</div>
+                            <h3 class="course-card__title">Web Development</h3>
+                        </div>
+                        <p class="course-card__desc">Ship full-stack projects from idea to deployment.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">8 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+
+                    <article class="course-card" id="course-ai">
+                        <div class="course-card__header">
+                            <div class="course-card__icon" aria-hidden="true">AI</div>
+                            <h3 class="course-card__title">AI</h3>
+                        </div>
+                        <p class="course-card__desc">Understand models, prompts, and practical AI workflows.</p>
+                        <div class="course-card__details">
+                            <div class="course-card__meta">
+                                <span class="course-card__level">Beginner → Advanced</span>
+                                <span class="course-card__dot" aria-hidden="true"></span>
+                                <span class="course-card__duration">3 Week Guided Path</span>
+                            </div>
+                            <span class="course-card__badge">Roadmap Included</span>
+                        </div>
+                        <a class="course-card__cta" href="#">Start Learning</a>
+                    </article>
+                </div>
+            </section>
+
+        </main>
+    </div>
 
 </body>
 </html>
