@@ -1,0 +1,286 @@
+/* ==========================================================================
+   ABOUT.CSS — Styles for the OpenLearn about page
+   Loaded after global.css and home.css (navbar + footer reuse home.css).
+   ========================================================================== */
+
+.navbar-links a[aria-current="page"] {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   HERO
+   -------------------------------------------------------------------------- */
+.about-hero {
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-hero__inner {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.about-hero__eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.about-hero__title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.about-hero__title-note {
+  color: var(--text-secondary);
+}
+
+.about-hero__lead {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* --------------------------------------------------------------------------
+   SECTIONS
+   -------------------------------------------------------------------------- */
+.about-section {
+  padding: var(--space-xl) var(--space-md);
+}
+
+.about-section--dark {
+  background-color: var(--bg-dark);
+}
+
+.about-section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about-section__inner--split {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.about-section__title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.about-section__title--light {
+  color: var(--bg-light);
+  text-align: center;
+}
+
+.about-section__subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: calc(var(--space-sm) * -1) auto var(--space-lg);
+  max-width: 28rem;
+}
+
+.about-section__subtitle--light {
+  color: #a8a8a8;
+}
+
+.about-section__text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: var(--space-md);
+}
+
+.about-section__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Mission quote card */
+.about-mission-card {
+  position: relative;
+  padding: var(--space-lg);
+  background-color: rgba(13, 13, 13, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.about-mission-card__quote {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--text-secondary);
+  opacity: 0.35;
+  margin-bottom: var(--space-xs);
+}
+
+.about-mission-card p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   VALUES GRID
+   -------------------------------------------------------------------------- */
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.about-value-card {
+  padding: var(--space-lg);
+  background-color: rgba(247, 247, 245, 0.06);
+  border: 1px solid rgba(217, 217, 217, 0.2);
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+.about-value-card:hover {
+  background-color: rgba(247, 247, 245, 0.1);
+  border-color: rgba(217, 217, 217, 0.35);
+}
+
+.about-value-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.125rem;
+  color: var(--bg-light);
+  background-color: rgba(247, 247, 245, 0.1);
+  border: 1px solid rgba(217, 217, 217, 0.25);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-md);
+}
+
+.about-value-card__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--bg-light);
+  margin-bottom: var(--space-xs);
+}
+
+.about-value-card__text {
+  font-size: 0.9375rem;
+  color: #a8a8a8;
+  line-height: 1.65;
+}
+
+/* --------------------------------------------------------------------------
+   STATS
+   -------------------------------------------------------------------------- */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.about-stat {
+  padding: var(--space-lg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg-light);
+}
+
+.about-stat__number {
+  display: block;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-xs);
+}
+
+.about-stat__label {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   CTA
+   -------------------------------------------------------------------------- */
+.about-cta {
+  padding: var(--space-xl) var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.about-cta__inner {
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-cta__title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.about-cta__text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.about-cta__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--bg-light);
+  background-color: var(--bg-dark);
+  border-radius: 999px;
+  transition: opacity var(--transition);
+}
+
+.about-cta__button:hover {
+  opacity: 0.88;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .about-section__inner--split {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding-top: var(--space-lg);
+  }
+}
