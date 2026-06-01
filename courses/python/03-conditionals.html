@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/home.css">
     <link rel="stylesheet" href="../../css/lesson.css">
+    <link rel="stylesheet" href="../../css/practice.css">
 </head>
 <body class="page-lesson">
     <header class="site-header">
@@ -49,10 +50,30 @@ has_id = True
 if age >= 18 and has_id:
     print("Allowed")</code></pre>
                 <p>Use <code>and</code>, <code>or</code>, and <code>not</code> to combine tests.</p>
-                <div class="lesson-exercise">
-                    <h3>Practice</h3>
-                    <p>Write a program that tells the user if a number is positive, negative, or zero.</p>
-                </div>
+                <section class="practice-panel" data-practice-type="lesson" data-practice-id="03-conditionals" aria-labelledby="practice-title">
+                    <div class="practice-panel__header">
+                        <span class="practice-panel__eyebrow">Practice</span>
+                        <h2 id="practice-title" class="practice-panel__title">Try it now</h2>
+                        <p class="practice-panel__hint">Ask for a number, then print whether it is positive, negative, or zero.</p>
+                        <div class="practice-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="practice-progress__bar"></div></div>
+                        <span class="practice-progress__label">0% complete</span>
+                    </div>
+                    <div class="practice-workspace">
+                        <label for="practice-code">Your code</label>
+                        <textarea id="practice-code" class="practice-code" rows="8" spellcheck="false" placeholder="n = int(input(...))"></textarea>
+                    </div>
+                    <fieldset class="practice-checklist">
+                        <legend>Check when done</legend>
+                        <label class="practice-check"><input type="checkbox"><span>Program reads a number from the user</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Uses <code>if</code> / <code>elif</code> / <code>else</code> (or equivalent branches)</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Correctly labels positive, negative, and zero</span></label>
+                    </fieldset>
+                    <div class="practice-success" hidden>
+                        <span class="practice-success__icon" aria-hidden="true">✓</span>
+                        <p class="practice-success__title">Practice complete!</p>
+                        <p class="practice-success__text">You can branch on conditions — next up: loops.</p>
+                    </div>
+                </section>
                 <nav class="lesson-nav">
                     <a href="02-variables.html">← Variables</a>
                     <a class="lesson-nav__next" href="04-loops.html">Next: Loops →</a>
@@ -61,5 +82,6 @@ if age >= 18 and has_id:
         </article>
     </main>
     <footer class="footer-section"><div class="footer-bottom"><p>&copy; 2026 OpenLearn.</p></div></footer>
+    <script src="../../js/practice.js" defer></script>
 </body>
 </html>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/home.css">
     <link rel="stylesheet" href="../../css/lesson.css">
+    <link rel="stylesheet" href="../../css/practice.css">
 </head>
 <body class="page-lesson">
     <header class="site-header">
@@ -63,10 +64,30 @@ print(type(age))    # &lt;class 'int'&gt;</code></pre>
                 <pre><code>city = input("Where do you live? ")
 print("Nice to meet someone from", city)</code></pre>
                 <p><code>input()</code> always returns a string. Convert numbers with <code>int()</code> or <code>float()</code>.</p>
-                <div class="lesson-exercise">
-                    <h3>Practice</h3>
-                    <p>Ask for name and birth year, compute approximate age, print a one-line introduction.</p>
-                </div>
+                <section class="practice-panel" data-practice-type="lesson" data-practice-id="02-variables" aria-labelledby="practice-title">
+                    <div class="practice-panel__header">
+                        <span class="practice-panel__eyebrow">Practice</span>
+                        <h2 id="practice-title" class="practice-panel__title">Try it now</h2>
+                        <p class="practice-panel__hint">Ask for name and birth year, compute age, print one introduction line.</p>
+                        <div class="practice-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="practice-progress__bar"></div></div>
+                        <span class="practice-progress__label">0% complete</span>
+                    </div>
+                    <div class="practice-workspace">
+                        <label for="practice-code">Your code</label>
+                        <textarea id="practice-code" class="practice-code" rows="8" spellcheck="false" placeholder="name = input(...)"></textarea>
+                    </div>
+                    <fieldset class="practice-checklist">
+                        <legend>Check when done</legend>
+                        <label class="practice-check"><input type="checkbox"><span>I used <code>input()</code> at least twice</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>I converted the year with <code>int()</code></span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Program prints a one-line intro with name and age</span></label>
+                    </fieldset>
+                    <div class="practice-success" hidden>
+                        <span class="practice-success__icon" aria-hidden="true">✓</span>
+                        <p class="practice-success__title">Practice complete!</p>
+                        <p class="practice-success__text">Ready for Project 1 — build your greeting script next.</p>
+                    </div>
+                </section>
                 <nav class="lesson-nav">
                     <a href="01-intro.html">← Introduction</a>
                     <a class="lesson-nav__next" href="project-01-greeting.html">Project 1 →</a>
@@ -75,5 +96,6 @@ print("Nice to meet someone from", city)</code></pre>
         </article>
     </main>
     <footer class="footer-section"><div class="footer-bottom"><p>&copy; 2026 OpenLearn.</p></div></footer>
+    <script src="../../js/practice.js" defer></script>
 </body>
 </html>

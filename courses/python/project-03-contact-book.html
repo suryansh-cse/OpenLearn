@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/home.css">
     <link rel="stylesheet" href="../../css/lesson.css">
+    <link rel="stylesheet" href="../../css/practice.css">
 </head>
 <body class="page-lesson">
     <header class="site-header">
@@ -40,6 +41,33 @@
 ]</code></pre>
                 <h2>Stretch</h2>
                 <p>Save and load contacts from a JSON file using the <code>json</code> module.</p>
+
+                <section class="practice-panel practice-panel--project" data-practice-type="project" data-practice-id="project-03" aria-labelledby="practice-title">
+                    <div class="practice-panel__header">
+                        <span class="practice-panel__eyebrow">Build &amp; verify</span>
+                        <h2 id="practice-title" class="practice-panel__title">Practice workspace</h2>
+                        <p class="practice-panel__hint">Build the contact book, run through each menu option once, then check off the requirements.</p>
+                        <div class="practice-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="practice-progress__bar"></div></div>
+                        <span class="practice-progress__label">0% complete</span>
+                    </div>
+                    <div class="practice-workspace">
+                        <label for="practice-code">Your code</label>
+                        <textarea id="practice-code" class="practice-code" rows="12" spellcheck="false" placeholder="# contact_book.py"></textarea>
+                    </div>
+                    <fieldset class="practice-checklist">
+                        <legend>Project requirements</legend>
+                        <label class="practice-check"><input type="checkbox"><span>Menu loop offers Add, List all, Search, and Quit</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Each contact stores name, phone, and optional email</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Contacts live in a list of dictionaries</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Search matches names case-insensitively (partial match OK)</span></label>
+                    </fieldset>
+                    <div class="practice-success" hidden>
+                        <span class="practice-success__icon" aria-hidden="true">✓</span>
+                        <p class="practice-success__title">You built the right project!</p>
+                        <p class="practice-success__text">Project 3 complete. Your contact book handles the core menu — continue to strings and files.</p>
+                    </div>
+                </section>
+
                 <nav class="lesson-nav">
                     <a href="07-dictionaries.html">← Lesson 7</a>
                     <a class="lesson-nav__next" href="08-strings-files.html">Week 4 →</a>
@@ -48,5 +76,6 @@
         </article>
     </main>
     <footer class="footer-section"><div class="footer-bottom"><p>&copy; 2026 OpenLearn.</p></div></footer>
+    <script src="../../js/practice.js" defer></script>
 </body>
 </html>

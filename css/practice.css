@@ -1,0 +1,270 @@
+/* ==========================================================================
+   PRACTICE.CSS — In-lesson practice & project validation panels
+   ========================================================================== */
+
+.practice-panel {
+  margin: var(--space-lg) 0;
+  padding: var(--space-lg);
+  background-color: #fff;
+  border: 2px solid var(--bg-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(13, 13, 13, 0.06);
+}
+
+.practice-panel--project {
+  border-color: var(--text-primary);
+  background: linear-gradient(180deg, #fff 0%, rgba(13, 13, 13, 0.02) 100%);
+}
+
+.practice-panel__header {
+  margin-bottom: var(--space-md);
+}
+
+.practice-panel__eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--bg-light);
+  background-color: var(--bg-dark);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: var(--space-xs);
+}
+
+.practice-panel__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.practice-panel__hint {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin-bottom: var(--space-md);
+}
+
+.practice-progress {
+  height: 6px;
+  background-color: rgba(13, 13, 13, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.practice-progress__bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--bg-dark);
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.practice-progress__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.practice-workspace {
+  margin-bottom: var(--space-md);
+}
+
+.practice-workspace label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.practice-code,
+.practice-output-input {
+  width: 100%;
+  padding: var(--space-md);
+  font-family: ui-monospace, "Cascadia Code", "Consolas", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background-color: #fafafa;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.practice-code:focus,
+.practice-output-input:focus {
+  outline: none;
+  border-color: var(--text-primary);
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.08);
+}
+
+.practice-expected {
+  margin-bottom: var(--space-md);
+  padding: var(--space-md);
+  background-color: rgba(13, 13, 13, 0.04);
+  border-radius: var(--radius-md);
+}
+
+.practice-expected__title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.practice-expected pre {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+}
+
+.practice-checklist {
+  border: none;
+  margin: 0 0 var(--space-md);
+  padding: 0;
+}
+
+.practice-checklist legend {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.practice-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(217, 217, 217, 0.6);
+}
+
+.practice-check:last-child {
+  border-bottom: none;
+}
+
+.practice-check input {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--bg-dark);
+  cursor: pointer;
+}
+
+.practice-check:has(input:checked) {
+  color: var(--text-primary);
+}
+
+.practice-check:has(input:checked) span {
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
+.practice-output-check {
+  margin-bottom: var(--space-md);
+}
+
+.practice-output-check label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.practice-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-sm);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bg-light);
+  background-color: var(--bg-dark);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.practice-btn:hover {
+  opacity: 0.88;
+}
+
+.practice-feedback {
+  margin-top: var(--space-sm);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.practice-feedback--ok {
+  color: #0d5c2e;
+}
+
+.practice-feedback--warn {
+  color: #8a5a00;
+}
+
+.practice-feedback[hidden] {
+  display: none;
+}
+
+.practice-success {
+  padding: var(--space-lg);
+  text-align: center;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border-radius: var(--radius-md);
+  animation: practice-success-in 0.45s ease;
+}
+
+.practice-success[hidden] {
+  display: none;
+}
+
+.practice-success__icon {
+  display: block;
+  font-size: 2rem;
+  margin-bottom: var(--space-xs);
+}
+
+.practice-success__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.practice-success__text {
+  font-size: 0.9375rem;
+  color: #c8c8c8;
+  line-height: 1.55;
+}
+
+@keyframes practice-success-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .practice-panel {
+    padding: var(--space-md);
+  }
+}

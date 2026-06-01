@@ -14,9 +14,20 @@
 **Syllabus page:** `careers/python-developer/index.html`  
 **JSON plan:** `content/careers/python-developer/syllabus.json`
 
+## Practice panels (learn + verify on the same page)
+
+Lessons and projects include a **practice workspace** at the bottom:
+
+- Checklist + progress bar → **success message** when all items are checked
+- Projects show **"You built the right project!"**
+- Optional code textarea (saved in browser)
+- Some projects support **Check my output** (paste terminal text)
+
+Files: `css/practice.css`, `js/practice.js` — copy a panel from `courses/python/01-intro.html` or `project-01-greeting.html`.
+
 ## Add or edit content
 
-1. **New lesson** — copy `courses/python/01-intro.html`, rename, update title/body/nav links.
+1. **New lesson** — copy `courses/python/01-intro.html`, rename, update title/body/nav links and practice checklist.
 2. **Syllabus** — add a line in `careers/python-developer/index.html` under the right week.
 3. **Course index** — add the lesson to `courses/python/index.html` (or problem-solving / dsa index).
 

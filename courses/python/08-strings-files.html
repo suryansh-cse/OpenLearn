@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/home.css">
     <link rel="stylesheet" href="../../css/lesson.css">
+    <link rel="stylesheet" href="../../css/practice.css">
 </head>
 <body class="page-lesson">
     <header class="site-header">
@@ -44,10 +45,30 @@ print(f"You studied {topic} for {hours} hours.")</code></pre>
                 <pre><code>with open("log.txt", "w", encoding="utf-8") as file:
     file.write("Session complete\n")</code></pre>
                 <p><code>with</code> closes the file automatically — always prefer it.</p>
-                <div class="lesson-exercise">
-                    <h3>Practice</h3>
-                    <p>Write a program that counts lines in a text file you create manually.</p>
-                </div>
+                <section class="practice-panel" data-practice-type="lesson" data-practice-id="08-strings-files" aria-labelledby="practice-title">
+                    <div class="practice-panel__header">
+                        <span class="practice-panel__eyebrow">Practice</span>
+                        <h2 id="practice-title" class="practice-panel__title">Try it now</h2>
+                        <p class="practice-panel__hint">Create a small text file, then write a program that counts how many lines it contains.</p>
+                        <div class="practice-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="practice-progress__bar"></div></div>
+                        <span class="practice-progress__label">0% complete</span>
+                    </div>
+                    <div class="practice-workspace">
+                        <label for="practice-code">Your code</label>
+                        <textarea id="practice-code" class="practice-code" rows="8" spellcheck="false" placeholder='with open("notes.txt", "r") as f:'></textarea>
+                    </div>
+                    <fieldset class="practice-checklist">
+                        <legend>Check when done</legend>
+                        <label class="practice-check"><input type="checkbox"><span>Uses <code>with open(...)</code> to read a file</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Counts lines (e.g. loop over lines or <code>readlines()</code>)</span></label>
+                        <label class="practice-check"><input type="checkbox"><span>Prints the line count for your test file</span></label>
+                    </fieldset>
+                    <div class="practice-success" hidden>
+                        <span class="practice-success__icon" aria-hidden="true">✓</span>
+                        <p class="practice-success__title">Practice complete!</p>
+                        <p class="practice-success__text">File reading works — try modules next.</p>
+                    </div>
+                </section>
                 <nav class="lesson-nav">
                     <a href="07-dictionaries.html">← Dictionaries</a>
                     <a class="lesson-nav__next" href="09-modules.html">Next: Modules →</a>
@@ -56,5 +77,6 @@ print(f"You studied {topic} for {hours} hours.")</code></pre>
         </article>
     </main>
     <footer class="footer-section"><div class="footer-bottom"><p>&copy; 2026 OpenLearn.</p></div></footer>
+    <script src="../../js/practice.js" defer></script>
 </body>
 </html>
