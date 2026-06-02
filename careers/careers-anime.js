@@ -12,7 +12,7 @@ animate('.square', {
 
   delay: (_, i) => i * 200,
 
-  loop: true,
+  loop: false,
 
   alternate: true,
 
