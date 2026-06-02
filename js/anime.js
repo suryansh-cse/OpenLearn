@@ -69,3 +69,7 @@ if (document.readyState === 'loading') {
 } else {
   startPillarAnimation();
 }
+
+
+
+ 

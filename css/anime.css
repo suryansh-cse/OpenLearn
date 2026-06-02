@@ -154,3 +154,30 @@
     min-height: 52px;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   ANIMATION FIXED CORNER
+   -------------------------------------------------------------------------- */
+.animation-fixed-corner {
+                  position: absolute;
+                  top: 8rem;
+                  right: 6rem; 
+                  z-index: 50;
+                  pointer-events: none;
+                }
+                .animation-fixed-corner .row {
+                  display: flex;
+                  align-items: center;
+                  height: 4.5rem;
+                  margin-bottom: 1.2rem;
+                  justify-content: flex-end;
+                }
+                .animation-fixed-corner .square {
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  background: #111;
+                  border-radius: 0.75rem;
+                  box-shadow: 0 5px 16px rgba(18,18,18,0.10);
+                  display: inline-block;
+                }

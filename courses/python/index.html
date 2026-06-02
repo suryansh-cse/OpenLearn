@@ -44,6 +44,75 @@
                 <h1 class="path-hero__title">Python</h1>
                 <p class="path-hero__lead">Nine core lessons plus three projects. Start at lesson 1 if you are new.</p>
                 <a class="path-hero__cta" href="01-intro.html">Lesson 1 — Introduction</a>
+
+            </div>
+              <style>
+                .animation-fixed-corner {
+                  position: absolute;
+                  top: 8rem;
+                  right: 6rem; /* moved more left so fully in the frame */
+                  z-index: 50;
+                  pointer-events: none;
+                }
+                .animation-fixed-corner .row {
+                  display: flex;
+                  align-items: center;
+                  height: 4.5rem;
+                  margin-bottom: 1.2rem;
+                  justify-content: flex-end;
+                }
+                .animation-fixed-corner .square {
+                  width: 3.5rem;
+                  height: 3.5rem;
+                  background: #111;
+                  border-radius: 0.75rem;
+                  box-shadow: 0 5px 16px rgba(18,18,18,0.10);
+                  display: inline-block;
+                }
+              </style>
+              <div class="animation-fixed-corner">
+                  <div class="row">
+                      <div class="square" id="demo-square-1"></div>
+                  </div>
+                  <div class="row">
+                      <div class="square" id="demo-square-2"></div>
+                  </div>
+                  <div class="row">
+                      <div class="square" id="demo-square-3"></div>
+                  </div>
+              </div>
+              <script type="module">
+                import anime from 'https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.es.js';
+
+                // Animate first square: move inwards
+                anime({
+                  targets: '#demo-square-1',
+                  translateX: '4rem',
+                  direction: 'alternate',
+                  loop: true,
+                  easing: 'easeInOutSine',
+                  duration: 1200
+                });
+
+                // Animate second square: rotate continuously
+                anime({
+                  targets: '#demo-square-2',
+                  rotate: '1turn',
+                  easing: 'linear',
+                  duration: 1600,
+                  loop: true
+                });
+
+                // Animate third square: scale down and back up
+                anime({
+                  targets: '#demo-square-3',
+                  scale: [
+                    { value: 0.5, duration: 700, easing: 'easeInOutBack' },
+                    { value: 1, duration: 700, easing: 'easeInOutBack' }
+                  ],
+                  loop: true
+                });
+              </script>
             </div>
         </header>
 
@@ -106,5 +175,6 @@
     </footer>
 
     <script src="../../js/practice.js" defer></script>
+    <script src="../../js/anime.js" type="module"></script>
 </body>
 </html>
