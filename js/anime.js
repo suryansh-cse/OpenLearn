@@ -71,5 +71,19 @@ if (document.readyState === 'loading') {
 }
 
 
+import { animate, utils } from 'https://esm.sh/animejs';
+console.log("anime.js loaded");
+animate('.square', {
+  x: $el => $el.getAttribute('data-x'),
+  y: (_, i) => 50 + (-50 * i),
+  scale: (_, i, t) => (t.length - i) * 0.75,
+  rotate: () => utils.random(-360, 360),
+  borderRadius: () => `+=${utils.random(0, 8)}`,
+  duration: () => utils.random(1200, 1800),
+  delay: () => utils.random(0, 400),
+  ease: 'outElastic(1, .5)',
 
+  loop: true,
+  alternate: true
+});
  

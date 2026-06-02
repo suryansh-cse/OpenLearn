@@ -1,20 +1,5 @@
-/* ==========================================================================
-   ANIME.CSS — Styles for the 4 pillar cards layout animation (hero right side)
-
-   WHY THE ORIGINAL CSS FAILED:
-   Every grid rule was written as "#layout .grid-layout" and "#layout [data-grid=...]",
-   but index.html had NO element with id="layout". Those selectors never matched,
-   so the cards had no grid layout and anime.js had nothing meaningful to animate.
-
-   FIX: Wrap the animation area in <div id="layout"> and style cards below.
-   ========================================================================== */
 
 
-/* --------------------------------------------------------------------------
-   OUTER WRAPPER (#layout)
-   Required by anime.js docs — grid state selectors are scoped under #layout.
-   Fills the hero right column and centers the demo.
-   -------------------------------------------------------------------------- */
 #layout.pillar-animation {
   width: 100%;
   display: flex;
@@ -155,29 +140,5 @@
   }
 }
 
+/* ANIMATION FIXED CORNER */
 
-/* --------------------------------------------------------------------------
-   ANIMATION FIXED CORNER
-   -------------------------------------------------------------------------- */
-.animation-fixed-corner {
-                  position: absolute;
-                  top: 8rem;
-                  right: 6rem; 
-                  z-index: 50;
-                  pointer-events: none;
-                }
-                .animation-fixed-corner .row {
-                  display: flex;
-                  align-items: center;
-                  height: 4.5rem;
-                  margin-bottom: 1.2rem;
-                  justify-content: flex-end;
-                }
-                .animation-fixed-corner .square {
-                  width: 3.5rem;
-                  height: 3.5rem;
-                  background: #111;
-                  border-radius: 0.75rem;
-                  box-shadow: 0 5px 16px rgba(18,18,18,0.10);
-                  display: inline-block;
-                }
