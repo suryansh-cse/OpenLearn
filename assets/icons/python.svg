@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="pythonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3776ab;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffd43b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" fill="url(#pythonGrad)"/>
+  <path fill="#ffffff" d="M24,10C16.3,10 10,16.3 10,24C10,31.7 16.3,38 24,38C31.7,38 38,31.7 38,24C38,16.3 31.7,10 24,10M20,16H28C28.6,16 29,16.4 29,17V21C29,21.6 28.6,22 28,22H20C19.4,22 19,21.6 19,21V17C19,16.4 19.4,16 20,16M18,26H30V32C30,32.6 29.6,33 29,33H19C18.4,33 18,32.6 18,32V26Z"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="reactGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#61dafb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" fill="url(#reactGrad)"/>
+  <path fill="#111111" d="M24,10C16.3,10 10,16.3 10,24C10,31.7 16.3,38 24,38C31.7,38 38,31.7 38,24C38,16.3 31.7,10 24,10M24,14C26.2,14 28,15.8 28,18C28,20.2 26.2,22 24,22C21.8,22 20,20.2 20,18C20,15.8 21.8,14 24,14M18,30C18,27.8 19.8,26 22,26C24.2,26 26,27.8 26,30V34H18V30M26,30C26,27.8 27.8,26 30,26C32.2,26 34,27.8 34,30V34H26V30Z"/>
+</svg>
