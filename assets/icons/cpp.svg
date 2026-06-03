@@ -1,10 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Official C++ Logo -->
   <defs>
-    <linearGradient id="cppGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="cppGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#00599c;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#004482;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="22" fill="url(#cppGrad)"/>
-  <path fill="#ffffff" d="M24,10C16.3,10 10,16.3 10,24C10,31.7 16.3,38 24,38C31.7,38 38,31.7 38,24C38,16.3 31.7,10 24,10M15,20H17V28H15V20M19,20H21V28H19V20M23,20H25V28H23V20M27,20H29V28H27V20M31,20H33V28H31V20"/>
+  <circle cx="24" cy="24" r="22" fill="url(#cppGradient)"/>
+  <!-- C++ text representation -->
+  <g transform="translate(24, 24)">
+    <!-- C shape -->
+    <path d="M -8,-5 Q -10,-5 -10,0 Q -10,5 -8,5" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Plus signs -->
+    <g transform="translate(5, -3)">
+      <line x1="0" y1="-2" x2="0" y2="2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-2" y1="0" x2="2" y2="0" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(5, 4)">
+      <line x1="0" y1="-2" x2="0" y2="2" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-2" y1="0" x2="2" y2="0" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+  </g>
 </svg>

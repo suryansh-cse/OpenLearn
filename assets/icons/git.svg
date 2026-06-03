@@ -1,10 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Official Git Logo -->
   <defs>
-    <linearGradient id="gitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="gitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#f34f29;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#d9441e;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="22" fill="url(#gitGrad)"/>
-  <path fill="#ffffff" d="M24,10C16.3,10 10,16.3 10,24C10,31.7 16.3,38 24,38C31.7,38 38,31.7 38,24C38,16.3 31.7,10 24,10M18,24L24,18L30,24L28,26L24,22L20,26L18,24Z"/>
+  <circle cx="24" cy="24" r="22" fill="url(#gitGradient)"/>
+  <!-- Git rune/circle-X design -->
+  <g transform="translate(24, 24)">
+    <!-- Three interconnected circles -->
+    <circle cx="-6" cy="-4" r="3" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="6" cy="-4" r="3" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="0" cy="7" r="3" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <!-- Connecting lines -->
+    <line x1="-4" y1="-2" x2="4" y2="-2" stroke="#ffffff" stroke-width="1.2"/>
+    <line x1="-3.5" y1="0.5" x2="-1.5" y2="5" stroke="#ffffff" stroke-width="1.2"/>
+    <line x1="3.5" y1="0.5" x2="1.5" y2="5" stroke="#ffffff" stroke-width="1.2"/>
+  </g>
 </svg>

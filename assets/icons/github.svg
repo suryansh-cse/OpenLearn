@@ -1,10 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Official GitHub Logo: Octocat -->
   <defs>
-    <linearGradient id="githubGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="githubGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#333333;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#1a1a1a;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="22" fill="url(#githubGrad)"/>
-  <path fill="#ffffff" d="M24,10C16.3,10 10,16.3 10,24C10,31.7 16.3,38 24,38C31.7,38 38,31.7 38,24C38,16.3 31.7,10 24,10M20,15C20,14.4 20.4,14 21,14C21.6,14 22,14.4 22,15C22,15.6 21.6,16 21,16C20.4,16 20,15.6 20,15M26,15C26,14.4 26.4,14 27,14C27.6,14 28,14.4 28,15C28,15.6 27.6,16 27,16C26.4,16 26,15.6 26,15M18,22H30V32H18V22Z"/>
+  <circle cx="24" cy="24" r="22" fill="url(#githubGradient)"/>
+  <!-- Octocat silhouette -->
+  <g transform="translate(24, 24)">
+    <!-- Head -->
+    <circle cx="0" cy="-5" r="4" fill="#ffffff"/>
+    <!-- Body -->
+    <ellipse cx="0" cy="4" rx="3" ry="5" fill="#ffffff"/>
+    <!-- Left arm -->
+    <path d="M -3,2 L -7,0" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Right arm -->
+    <path d="M 3,2 L 7,0" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Tentacles (8 arms) -->
+    <path d="M -2,8 L -4,12" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 0,9 L -1,12" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 2,8 L 4,12" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+    <path d="M 0,9 L 1,12" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
 </svg>

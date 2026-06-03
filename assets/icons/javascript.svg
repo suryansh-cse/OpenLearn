@@ -1,10 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <!-- Official JavaScript Logo -->
   <defs>
-    <linearGradient id="jsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="jsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#f7df1e;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#fcc417;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <circle cx="24" cy="24" r="22" fill="url(#jsGrad)"/>
-  <path fill="#111111" d="M15,12H33V36H15V12M18,15V33H22V21L25,31H29L26,20C27.5,19 28.5,17 28.5,15C28.5,12.8 27,11 25,11C23.5,11 22.3,12 22,13.5V15H18Z"/>
+  <rect x="6" y="8" width="36" height="32" rx="3" fill="url(#jsGradient)"/>
+  <!-- JS letters -->
+  <g transform="translate(24, 24)">
+    <!-- J -->
+    <path d="M -6,-6 L -2,-6 L -2,4 Q -2,6 -4,6 L -6,6" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- S -->
+    <path d="M 3,-5 Q 6,-5 6,-3 Q 6,-1 4,-1 Q 2,-1 2,1 Q 2,3 4,3 Q 6,3 6,5" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>
