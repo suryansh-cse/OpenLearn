@@ -27,16 +27,38 @@
             padding: var(--space-md);
         }
         
+        /* Dashboard Grid Layout: Main (70%) & Sidebar (30%) */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+            gap: var(--space-md);
+            align-items: start;
+        }
+
+        .dashboard-main-col,
+        .dashboard-sidebar-col {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
         /* Welcome Section */
         .dashboard-welcome {
-            margin-bottom: var(--space-xl);
             padding: var(--space-lg);
             background-color: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
             box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-md);
         }
         
+        .welcome-content {
+            flex: 1;
+        }
+
         .welcome-greeting {
             font-size: 1.875rem;
             font-weight: 700;
@@ -50,27 +72,168 @@
             color: var(--text-secondary);
             font-weight: 500;
         }
-        
-        /* Progress Cards Grid */
+
+        /* User Profile Menu in Navbar */
+        .navbar-user {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .user-avatar {
+            width: 2.25rem;
+            height: 2.25rem;
+            background-color: var(--bg-dark);
+            color: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9375rem;
+            border: 1px solid var(--border-color);
+            transition: transform var(--transition);
+        }
+
+        .navbar-user:hover .user-avatar {
+            transform: scale(1.05);
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: calc(100% + 0.75rem);
+            right: 0;
+            width: 200px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 8px 30px rgba(17, 17, 17, 0.08);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .navbar-user:hover .user-dropdown,
+        .navbar-user:focus-within .user-dropdown {
+            display: flex;
+        }
+
+        .user-dropdown-header {
+            padding: 0.5rem 1rem;
+        }
+
+        .user-dropdown-name {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            margin-bottom: 0.125rem;
+        }
+
+        .user-dropdown-email {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .user-dropdown-divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 0.5rem 0;
+        }
+
+        .user-dropdown-item {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            transition: background-color var(--transition), color var(--transition);
+        }
+
+        .user-dropdown-item:hover {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+        }
+
+        .user-dropdown-item.logout-link:hover {
+            color: #a30000;
+        }
+
+        /* Stats Overview Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-sm);
+            width: 100%;
+        }
+
+        .stat-card {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+            transition: transform var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-card__num {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-card__lbl {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        /* Dashboard Section Container */
         .dashboard-section {
-            margin-bottom: var(--space-xl);
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
         }
         
+        .dashboard-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--space-sm);
+        }
+
         .dashboard-section-title {
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: -0.02em;
             color: var(--text-primary);
-            margin-bottom: var(--space-md);
         }
-        
+
+        /* Progress Card */
         .progress-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--space-md);
         }
-        
-        /* Progress Card */
+
         .progress-card {
             display: flex;
             flex-direction: column;
@@ -170,90 +333,473 @@
             cursor: not-allowed;
             opacity: 0.7;
         }
-        
-        /* Roadmap Section */
-        .roadmap-card {
+
+        /* Syllabus Accordion / Nested Checklist styling */
+        .syllabus-module {
+            margin-bottom: var(--space-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .syllabus-module-header {
+            padding: 0.75rem 1rem;
+            background-color: var(--bg-light);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .syllabus-module-badge {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 999px;
+            background-color: rgba(13, 13, 13, 0.05);
+            font-weight: 600;
+        }
+
+        .syllabus-lessons-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .syllabus-lesson-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.04);
+            font-size: 0.875rem;
+            transition: background-color var(--transition);
+        }
+
+        .syllabus-lesson-item:last-child {
+            border-bottom: none;
+        }
+
+        .syllabus-lesson-item:hover {
+            background-color: rgba(247, 247, 245, 0.5);
+        }
+
+        .syllabus-lesson-item.completed {
+            color: var(--text-secondary);
+        }
+
+        .syllabus-lesson-item.next-up {
+            font-weight: 600;
+            background-color: rgba(13, 13, 13, 0.02);
+            border-left: 3px solid var(--bg-dark);
+        }
+
+        .syllabus-lesson-item.locked {
+            color: var(--text-secondary);
+            opacity: 0.75;
+        }
+
+        .syllabus-lesson-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .syllabus-lesson-status-icon {
+            font-size: 1rem;
+            width: 1.25rem;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .syllabus-lesson-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: opacity var(--transition);
+        }
+
+        .syllabus-lesson-link:hover {
+            opacity: 0.75;
+        }
+
+        .syllabus-lesson-item.completed .syllabus-lesson-link {
+            color: var(--text-secondary);
+            text-decoration: line-through;
+        }
+
+        .syllabus-lesson-item.locked .syllabus-lesson-link {
+            pointer-events: none;
+            color: var(--text-secondary);
+        }
+
+        .syllabus-lesson-type-pill {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            background-color: var(--bg-dark);
+            color: var(--bg-light);
+        }
+
+        /* Certificate Milestone Card */
+        .milestone-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-md);
             padding: var(--space-lg);
             background-color: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
             box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+            position: relative;
+            overflow: hidden;
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
         }
-        
-        .roadmap-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-            margin-bottom: var(--space-md);
+
+        .milestone-card.unlocked {
+            border: 2px solid #d4af37;
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.12);
         }
-        
-        .roadmap-list {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
+
+        .milestone-card.unlocked:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
         }
-        
-        .roadmap-item {
+
+        .milestone-badge-wrapper {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .milestone-badge-icon {
+            font-size: 2.75rem;
+        }
+
+        .milestone-lock-overlay {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem 0;
-            font-size: 0.9375rem;
-            color: var(--text-primary);
-            border-bottom: 1px solid rgba(17, 17, 17, 0.04);
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
         }
-        
-        .roadmap-item:last-child {
-            border-bottom: none;
+
+        .milestone-card.unlocked .milestone-lock-overlay {
+            background-color: #00875a;
         }
-        
-        .roadmap-icon {
-            flex-shrink: 0;
-            font-size: 1.25rem;
-        }
-        
-        .roadmap-text {
+
+        .milestone-info {
             flex: 1;
         }
-        
-        /* Streak Card */
-        .streak-card {
-            padding: var(--space-lg);
-            background: linear-gradient(135deg, rgba(13, 13, 13, 0.04) 0%, rgba(13, 13, 13, 0.02) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
-        }
-        
-        .streak-flame {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .streak-number {
-            font-size: 2.5rem;
+
+        .milestone-title {
+            font-size: 1.125rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-bottom: 0.25rem;
         }
-        
-        .streak-label {
-            font-size: 0.9375rem;
+
+        .milestone-desc {
+            font-size: 0.875rem;
             color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: var(--space-md);
         }
-        
-        .streak-quote {
-            font-size: 0.9375rem;
+
+        .claim-certificate-btn {
+            padding: 0.7rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: opacity var(--transition), transform var(--transition);
+            box-shadow: 0 4px 12px rgba(170, 119, 28, 0.25);
+            white-space: nowrap;
+        }
+
+        .claim-certificate-btn:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        .claim-certificate-btn:disabled {
+            background: #d9d9d9;
             color: var(--text-secondary);
-            font-style: italic;
-            line-height: 1.6;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
         }
-        
-        /* Quick Actions */
+
+        /* Sidebar: Daily Goal Widget */
+        .sidebar-widget {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+        }
+
+        .widget-title {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .goal-gauge-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--space-sm) 0;
+            position: relative;
+        }
+
+        .goal-svg {
+            transform: rotate(-90deg);
+        }
+
+        .goal-circle-bg {
+            fill: none;
+            stroke: #e8e8e8;
+            stroke-width: 6;
+        }
+
+        .goal-circle-bar {
+            fill: none;
+            stroke: var(--bg-dark);
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke-dasharray: 226.19;
+            stroke-dashoffset: 226.19;
+            transition: stroke-dashoffset 0.6s ease;
+        }
+
+        .goal-center-details {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .goal-pct-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .goal-pct-label {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-top: 0.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .goal-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-top: var(--space-sm);
+        }
+
+        .goal-select {
+            padding: 0.4rem 0.5rem;
+            font-size: 0.8125rem;
+            font-family: inherit;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: #ffffff;
+            cursor: pointer;
+            flex: 1;
+            outline: none;
+        }
+
+        .goal-increment-btn {
+            padding: 0.4rem 0.75rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--bg-light);
+            background-color: var(--bg-dark);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: opacity var(--transition);
+        }
+
+        .goal-increment-btn:hover {
+            opacity: 0.88;
+        }
+
+        /* Sidebar: Weekly Targets Checklist */
+        .weekly-goals-checklist {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+            margin-top: 0.5rem;
+        }
+
+        .weekly-goal-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .weekly-goal-checkbox input {
+            margin-top: 0.25rem;
+            cursor: pointer;
+        }
+
+        .weekly-goal-checkbox input:checked + span {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar: Activity Heatmap */
+        .heatmap-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .heatmap-cell {
+            aspect-ratio: 1;
+            background-color: #f0f0ee;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+            transition: border-color var(--transition);
+        }
+
+        .heatmap-cell:hover {
+            border: 1px solid var(--text-primary);
+        }
+
+        .heatmap-cell[data-level="0"] { background-color: #f0f0ee; }
+        .heatmap-cell[data-level="1"] { background-color: #d1d1cf; }
+        .heatmap-cell[data-level="2"] { background-color: #9c9c9a; }
+        .heatmap-cell[data-level="3"] { background-color: #666665; }
+        .heatmap-cell[data-level="4"] { background-color: #111111; }
+
+        .heatmap-cell::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: calc(100% + 5px);
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.25rem 0.5rem;
+            background-color: var(--bg-dark);
+            color: var(--bg-light);
+            font-size: 0.6875rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+            z-index: 100;
+        }
+
+        .heatmap-cell:hover::after {
+            opacity: 1;
+        }
+
+        .heatmap-legend {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.6875rem;
+            color: var(--text-secondary);
+        }
+
+        .heatmap-legend-cell {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        /* Sidebar: Recent Activity Timeline */
+        .activity-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            margin-top: 0.5rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: var(--space-sm);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 18px;
+            bottom: -18px;
+            width: 1px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-node {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: var(--bg-dark);
+            border: 3px solid #ffffff;
+            z-index: 1;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .timeline-details {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .timeline-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.1rem;
+        }
+
+        /* Quick Actions grid in student dashboard */
         .quick-actions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -275,40 +821,381 @@
             transition: opacity var(--transition), transform var(--transition);
             text-decoration: none;
             white-space: nowrap;
+            text-align: center;
         }
         
         .action-button:hover {
             opacity: 0.88;
             transform: translateY(-1px);
         }
-        
-        /* Motivation Card */
-        .motivation-card {
-            padding: var(--space-lg);
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
-            text-align: center;
+
+        /* Certificate Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(13, 13, 13, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+            padding: var(--space-md);
         }
-        
-        .motivation-quote {
-            font-size: 1.125rem;
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .certificate-container {
+            background-color: #ffffff;
+            border: 15px double #aa771c;
+            padding: 3rem 2.5rem;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+            border-radius: var(--radius-md);
+            transform: scale(0.95);
+            transition: transform var(--transition);
+        }
+
+        .modal-overlay.open .certificate-container {
+            transform: scale(1);
+        }
+
+        .cert-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 9rem;
+            opacity: 0.025;
+            font-family: serif;
+            pointer-events: none;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .cert-org {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .cert-title-primary {
+            font-size: 2.25rem;
+            font-family: "Georgia", serif;
+            font-style: italic;
+            color: #aa771c;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-subtitle {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+
+        .cert-recipient-name {
+            font-size: 2.25rem;
+            font-family: "Georgia", serif;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block;
+            padding-bottom: 0.25rem;
+            min-width: 280px;
+            margin-bottom: 1.75rem;
+        }
+
+        .cert-body-text {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .cert-signatures {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .cert-sig-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cert-sig-line {
+            width: 140px;
+            height: 1px;
+            background-color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-sig-title {
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--text-primary);
-            line-height: 1.7;
-            max-width: 600px;
-            margin: 0 auto;
         }
-        
-        /* Responsive Grid for dashboard sections */
-        .dashboard-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        .cert-sig-subtitle {
+            font-size: 0.6875rem;
+            color: var(--text-secondary);
+        }
+
+        .cert-meta-row {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            font-size: 0.75rem;
+            border-top: 1px solid rgba(17, 17, 17, 0.06);
+            padding-top: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .cert-meta-item strong {
+            color: var(--text-primary);
+        }
+
+        .cert-id-badge {
+            font-size: 0.625rem;
+            font-family: monospace;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            display: block;
+        }
+
+        .cert-buttons-row {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-top: 2rem;
+        }
+
+        .cert-action-btn {
+            padding: 0.55rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: opacity var(--transition);
+        }
+
+        .cert-btn-dark {
+            color: var(--bg-light);
+            background-color: var(--bg-dark);
+            border: none;
+        }
+
+        .cert-btn-outline {
+            color: var(--text-primary);
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+        }
+
+        .cert-close-trigger {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: color var(--transition);
+        }
+
+        .cert-close-trigger:hover {
+            color: var(--text-primary);
+        }
+
+        /* Print styling for Certificate */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .modal-overlay,
+            .modal-overlay.open,
+            .certificate-container,
+            .certificate-container * {
+                visibility: visible;
+            }
+            .modal-overlay {
+                position: absolute;
+                inset: 0;
+                background-color: #ffffff !important;
+                backdrop-filter: none !important;
+                padding: 0 !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            .certificate-container {
+                border: 20px double #aa771c !important;
+                box-shadow: none !important;
+                transform: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .cert-buttons-row,
+            .cert-close-trigger {
+                display: none !important;
+            }
+        }
+
+        /* Developer Sandbox Drawer Panel */
+        .sandbox-drawer {
+            margin-top: var(--space-xl);
+            background-color: var(--bg-dark);
+            color: var(--bg-light);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+            overflow: hidden;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.15);
+        }
+
+        .sandbox-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem var(--space-md);
+            cursor: pointer;
+            background-color: #161616;
+            user-select: none;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .sandbox-header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sandbox-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #d4af37;
+            box-shadow: 0 0 8px #d4af37;
+        }
+
+        .sandbox-arrow {
+            transition: transform var(--transition);
+        }
+
+        .sandbox-drawer.open .sandbox-arrow {
+            transform: rotate(180deg);
+        }
+
+        .sandbox-body {
+            padding: var(--space-md);
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: #0d0d0d;
         }
-        
-        /* Mobile responsive */
+
+        .sandbox-drawer.open .sandbox-body {
+            display: grid;
+        }
+
+        .sandbox-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .sandbox-label {
+            font-size: 0.75rem;
+            color: #888888;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .sandbox-btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--bg-dark);
+            background-color: var(--bg-light);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: opacity var(--transition), transform var(--transition);
+            text-align: center;
+        }
+
+        .sandbox-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .sandbox-btn-outline {
+            background-color: transparent;
+            color: var(--bg-light);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .sandbox-btn-outline:hover {
+            background-color: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .sandbox-input-row {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .sandbox-input {
+            padding: 0.4rem 0.5rem;
+            font-size: 0.8125rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-sm);
+            background-color: rgba(255,255,255,0.05);
+            color: var(--bg-light);
+            outline: none;
+            flex: 1;
+        }
+
+        .sandbox-input:focus {
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .sandbox-btn-sm {
+            padding: 0.4rem 0.75rem;
+        }
+
+        /* Mobile responsive modifications */
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .dashboard-container {
                 padding: var(--space-sm);
@@ -316,20 +1203,22 @@
             
             .dashboard-welcome {
                 padding: var(--space-md);
+                flex-direction: column;
+                align-items: flex-start;
             }
             
             .welcome-greeting {
                 font-size: 1.5rem;
             }
             
-            .dashboard-section-title {
-                font-size: 1.125rem;
+            .dashboard-section {
+                padding: var(--space-md);
             }
-            
-            .progress-grid {
-                grid-template-columns: 1fr;
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .quick-actions {
                 grid-template-columns: 1fr;
             }
@@ -338,18 +1227,20 @@
                 width: 100%;
             }
             
-            .roadmap-card,
-            .streak-card,
-            .motivation-card {
+            .milestone-card {
+                flex-direction: column;
+                align-items: flex-start;
                 padding: var(--space-md);
             }
-            
-            .streak-number {
-                font-size: 2rem;
+
+            .claim-certificate-btn {
+                width: 100%;
             }
-            
-            .streak-flame {
-                font-size: 2.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -372,135 +1263,285 @@
                 <li><a href="about.html">About</a></li>
             </ul>
 
-            <a class="btn-sign-in" href="#sign-in">Sign In</a>
+            <!-- Dynamic Profile Menu (replaces Sign In) -->
+            <div class="navbar-user" id="userMenuBtn" tabindex="0">
+                <div class="user-avatar" id="navbarAvatar">A</div>
+                <div class="user-dropdown" id="userMenuDropdown">
+                    <div class="user-dropdown-header">
+                        <p class="user-dropdown-name" id="dropdownName">Alex Student</p>
+                        <p class="user-dropdown-email" id="dropdownEmail">alex@openlearn.edu</p>
+                    </div>
+                    <div class="user-dropdown-divider"></div>
+                    <a href="student-dashboard.html" class="user-dropdown-item">Dashboard</a>
+                    <a href="courses.html" class="user-dropdown-item">My Courses</a>
+                    <a href="#settings" class="user-dropdown-item">Settings</a>
+                    <div class="user-dropdown-divider"></div>
+                    <a href="#" class="user-dropdown-item logout-link" id="simLogoutBtn">Sign Out</a>
+                </div>
+            </div>
         </nav>
     </header>
 
     <!-- Main Dashboard Content -->
     <main class="dashboard-container">
 
-        <!-- Welcome Section -->
-        <section class="dashboard-welcome" aria-labelledby="welcome-heading">
-            <h1 id="welcome-heading" class="welcome-greeting">Welcome back, Student 👋</h1>
-            <p class="welcome-motivation">Continue learning and stay ahead.</p>
-        </section>
-
-        <!-- Learning Progress Section -->
-        <section class="dashboard-section" aria-labelledby="progress-heading">
-            <h2 id="progress-heading" class="dashboard-section-title">Your Learning Progress</h2>
-            <div class="progress-grid">
-                <!-- Python Progress Card -->
-                <article class="progress-card">
-                    <div class="progress-card-header">
-                        <div class="progress-card-icon">Py</div>
-                        <div class="progress-card-percentage">18%</div>
-                    </div>
-                    <h3 class="progress-card-title">Python</h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" style="width: 18%;"></div>
-                    </div>
-                    <p class="progress-card-status">18% completed • 2 of 11 modules</p>
-                    <button class="progress-card-button">Continue Learning</button>
-                </article>
-
-                <!-- HTML Progress Card -->
-                <article class="progress-card">
-                    <div class="progress-card-header">
-                        <div class="progress-card-icon">HTML</div>
-                        <div class="progress-card-percentage">0%</div>
-                    </div>
-                    <h3 class="progress-card-title">HTML</h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <p class="progress-card-status">Not started • 0 of 8 modules</p>
-                    <button class="progress-card-button">Start Learning</button>
-                </article>
-
-                <!-- DSA Progress Card -->
-                <article class="progress-card">
-                    <div class="progress-card-header">
-                        <div class="progress-card-icon">DSA</div>
-                        <div class="progress-card-percentage">🔒</div>
-                    </div>
-                    <h3 class="progress-card-title">DSA</h3>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <p class="progress-card-status">Coming Soon • Locked</p>
-                    <button class="progress-card-button" disabled>Locked</button>
-                </article>
+        <!-- Welcome Banner -->
+        <section class="dashboard-welcome" aria-labelledby="welcome-heading" style="margin-bottom: var(--space-md);">
+            <div class="welcome-content">
+                <h1 id="welcome-heading" class="welcome-greeting">Welcome back, <span id="welcomeStudentName">Student</span> 👋</h1>
+                <p class="welcome-motivation" id="welcomeMotivationText">Continue learning and stay ahead.</p>
             </div>
         </section>
 
-        <!-- Current Roadmap Section -->
-        <section class="dashboard-section" aria-labelledby="roadmap-heading">
-            <h2 id="roadmap-heading" class="dashboard-section-title">Python Developer Roadmap</h2>
-            <div class="roadmap-card">
-                <h3 class="roadmap-title">Your Current Path</h3>
-                <ul class="roadmap-list">
-                    <li class="roadmap-item">
-                        <span class="roadmap-icon">✅</span>
-                        <span class="roadmap-text">Introduction</span>
-                    </li>
-                    <li class="roadmap-item">
-                        <span class="roadmap-icon">✅</span>
-                        <span class="roadmap-text">Variables</span>
-                    </li>
-                    <li class="roadmap-item">
-                        <span class="roadmap-icon">✅</span>
-                        <span class="roadmap-text">Data Types</span>
-                    </li>
-                    <li class="roadmap-item">
-                        <span class="roadmap-icon">⬜</span>
-                        <span class="roadmap-text">Input & Output</span>
-                    </li>
-                    <li class="roadmap-item">
-                        <span class="roadmap-icon">⬜</span>
-                        <span class="roadmap-text">Operators</span>
-                    </li>
-                    <li class="roadmap-item">
-                        <span class="roadmap-icon">🔒</span>
-                        <span class="roadmap-text">Mini Project</span>
-                    </li>
-                </ul>
+        <!-- Two Column Dashboard Grid -->
+        <div class="dashboard-grid">
+            
+            <!-- Left / Main Column -->
+            <div class="dashboard-main-col">
+                
+                <!-- Performance KPI Row -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-card__num" id="kpiProgress">18%</span>
+                        <span class="stat-card__lbl">Python Progress</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num" id="kpiStreak">🔥 9</span>
+                        <span class="stat-card__lbl">Active Streak</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num" id="kpiHours">11.3h</span>
+                        <span class="stat-card__lbl">Study Time</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-card__num" id="kpiCertificates">0 / 1</span>
+                        <span class="stat-card__lbl">Certificates</span>
+                    </div>
+                </div>
+
+                <!-- Learning Progress Section (Dynamic Checklist) -->
+                <section class="dashboard-section" aria-labelledby="progress-heading">
+                    <div class="dashboard-section-header">
+                        <h2 id="progress-heading" class="dashboard-section-title">Course Tracker: Python</h2>
+                        <span class="syllabus-module-badge" id="pythonCompletenessStatus">18% Completed</span>
+                    </div>
+
+                    <!-- Recommended next lesson widget -->
+                    <div id="recommendedLessonCard" style="background-color: rgba(13, 13, 13, 0.03); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1rem; margin-bottom: var(--space-md); display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                        <div>
+                            <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-secondary); display: block; margin-bottom: 0.15rem;">Recommended Lesson</span>
+                            <span id="nextLessonTitle" style="font-size: 0.9375rem; font-weight: 600; color: var(--text-primary);">03 - Data Types</span>
+                        </div>
+                        <a id="nextLessonCTA" href="courses/python/03-data-type.html" class="progress-card-button" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Resume Learning</a>
+                    </div>
+
+                    <div id="pythonModulesContainer">
+                        <!-- Populated Dynamically via JS -->
+                    </div>
+                </section>
+
+                <!-- Certificates & Milestones -->
+                <section class="dashboard-section" aria-labelledby="milestones-heading">
+                    <div class="dashboard-section-header">
+                        <h2 id="milestones-heading" class="dashboard-section-title">Certificates &amp; Credentials</h2>
+                    </div>
+                    
+                    <article class="milestone-card" id="pythonCertificateCard">
+                        <div class="milestone-card-inner">
+                            <div class="milestone-badge-wrapper">
+                                <span class="milestone-badge-icon">🏆</span>
+                                <div class="milestone-lock-overlay" id="certLockStatus">🔒</div>
+                            </div>
+                            <div class="milestone-info">
+                                <h3 class="milestone-title">Python Developer Certificate</h3>
+                                <p class="milestone-desc" id="certDescription">Unlock this official credential by completing all 15 lessons and 4 projects.</p>
+                            </div>
+                        </div>
+                        <button class="claim-certificate-btn" id="claimCertificateBtn" disabled>Claim Certificate</button>
+                    </article>
+                </section>
+
+                <!-- Quick Actions Section -->
+                <section class="dashboard-section" aria-labelledby="actions-heading">
+                    <div class="dashboard-section-header">
+                        <h2 id="actions-heading" class="dashboard-section-title">Quick Actions</h2>
+                    </div>
+                    <div class="quick-actions">
+                        <a href="courses/python/index.html" class="action-button" id="resumePythonQuickAction">Continue Python</a>
+                        <a href="courses.html" class="action-button">Explore Courses</a>
+                        <a href="careers.html" class="action-button">Career Path</a>
+                    </div>
+                </section>
+
             </div>
-        </section>
 
-        <!-- Two-Column Layout: Streak + Motivation -->
-        <div class="dashboard-grid-2">
-            <!-- Daily Streak Card -->
-            <section class="dashboard-section" aria-labelledby="streak-heading">
-                <article class="streak-card">
-                    <div class="streak-flame" aria-hidden="true">🔥</div>
-                    <div id="streak-heading" class="streak-number">9</div>
-                    <p class="streak-label">Day Learning Streak</p>
-                    <p class="streak-quote">"Consistency beats intensity."</p>
-                </article>
-            </section>
-
-            <!-- Motivation Card -->
-            <section class="dashboard-section" aria-labelledby="motivation-heading">
-                <article class="motivation-card">
-                    <p id="motivation-heading" class="motivation-quote">
-                        Learning a little every day compounds faster than you think. Keep going! 🚀
+            <!-- Right / Sidebar Column -->
+            <div class="dashboard-sidebar-col">
+                
+                <!-- Daily Study Goal Gauge (Interactive SVG) -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Daily Study Goal</h3>
+                    <div class="goal-gauge-container">
+                        <svg class="goal-svg" width="90" height="90" viewBox="0 0 90 90">
+                            <circle class="goal-circle-bg" cx="45" cy="45" r="36" />
+                            <circle class="goal-circle-bar" id="goalCircularBar" cx="45" cy="45" r="36" />
+                        </svg>
+                        <div class="goal-center-details">
+                            <span class="goal-pct-number" id="goalPctText">0%</span>
+                            <span class="goal-pct-label" id="goalMinText">0m / 30m</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: var(--text-secondary); text-align: center; margin-bottom: var(--space-sm); line-height: 1.4;">
+                        Commit to small sessions everyday to build coding habits.
                     </p>
-                </article>
-            </section>
+                    <div class="goal-controls">
+                        <select class="goal-select" id="dailyGoalSelector" aria-label="Select daily study goal">
+                            <option value="15">15 mins / day</option>
+                            <option value="30" selected>30 mins / day</option>
+                            <option value="45">45 mins / day</option>
+                            <option value="60">60 mins / day</option>
+                        </select>
+                        <button class="goal-increment-btn" id="add15MinBtn">+15m</button>
+                    </div>
+                </div>
+
+                <!-- Daily Streak Card & Heatmap Grid -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Learning Activity</h3>
+                    <div style="text-align: center; margin-bottom: var(--space-md);">
+                        <span style="font-size: 2.25rem; display: block;" id="streakIcon">🔥</span>
+                        <strong style="font-size: 1.75rem; color: var(--text-primary); display: block; line-height: 1;" id="sidebarStreakDays">9 Days</strong>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-top: 0.25rem;">Daily Streak</span>
+                    </div>
+
+                    <!-- 14-day Heatmap Calendar grid -->
+                    <div class="heatmap-container">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.02em; display: block; margin-bottom: 0.35rem;">Consistency Calendar</span>
+                        <div class="heatmap-grid" id="heatmapGrid">
+                            <!-- Populated Dynamically via JS -->
+                        </div>
+                        <div class="heatmap-legend">
+                            <span>Less</span>
+                            <div class="heatmap-legend-cell" data-level="0"></div>
+                            <div class="heatmap-legend-cell" data-level="1"></div>
+                            <div class="heatmap-legend-cell" data-level="2"></div>
+                            <div class="heatmap-legend-cell" data-level="3"></div>
+                            <div class="heatmap-legend-cell" data-level="4"></div>
+                            <span>More</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Goals Checklist Widget -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Weekly Focus</h3>
+                    <div class="weekly-goals-checklist">
+                        <label class="weekly-goal-checkbox">
+                            <input type="checkbox" data-goal-id="python-lessons">
+                            <span>Complete 3 Python lessons</span>
+                        </label>
+                        <label class="weekly-goal-checkbox">
+                            <input type="checkbox" data-goal-id="build-project">
+                            <span>Build 1 Python Project</span>
+                        </label>
+                        <label class="weekly-goal-checkbox">
+                            <input type="checkbox" data-goal-id="github-page">
+                            <span>Review Git course page</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Feed -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Recent Achievements</h3>
+                    <div class="activity-timeline" id="recentActivityTimeline">
+                        <!-- Populated Dynamically via JS -->
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <!-- Quick Actions Section -->
-        <section class="dashboard-section" aria-labelledby="actions-heading">
-            <h2 id="actions-heading" class="dashboard-section-title">Quick Actions</h2>
-            <div class="quick-actions">
-                <a href="courses/python/index.html" class="action-button">Continue Python</a>
-                <button class="action-button">Practice Questions</button>
-                <button class="action-button">View Roadmap</button>
-                <a href="courses.html" class="action-button">Explore Courses</a>
+        <!-- Dashboard Sandbox Panel -->
+        <section class="sandbox-drawer" id="sandboxDrawer">
+            <div class="sandbox-header" id="sandboxHeaderTrigger">
+                <div class="sandbox-header-left">
+                    <div class="sandbox-indicator"></div>
+                    <span>Dashboard Sandbox / Simulation Controls</span>
+                </div>
+                <span class="sandbox-arrow" id="sandboxArrow">▼</span>
+            </div>
+            <div class="sandbox-body">
+                <div class="sandbox-col">
+                    <span class="sandbox-label">Progress States</span>
+                    <button class="sandbox-btn" id="btnSim0">Reset (0% Progress)</button>
+                    <button class="sandbox-btn" id="btnSim50">Simulate 50% Progress</button>
+                    <button class="sandbox-btn" id="btnSim100">Simulate 100% Progress</button>
+                </div>
+                <div class="sandbox-col">
+                    <span class="sandbox-label">Streak Controls</span>
+                    <button class="sandbox-btn sandbox-btn-outline" id="btnIncrementStreak">+1 Day Streak</button>
+                    <button class="sandbox-btn sandbox-btn-outline" id="btnResetStreak">Reset Streak</button>
+                </div>
+                <div class="sandbox-col">
+                    <span class="sandbox-label">Student Information</span>
+                    <div class="sandbox-input-row">
+                        <input type="text" class="sandbox-input" id="sandboxNameInput" placeholder="Student Name" value="Alex Student">
+                        <button class="sandbox-btn sandbox-btn-sm" id="btnSaveName">Save</button>
+                    </div>
+                    <p style="font-size: 0.6875rem; color: #a8a8a8; line-height: 1.3; margin: 0;">
+                        Changes apply instantly to the dashboard and certificate.
+                    </p>
+                </div>
             </div>
         </section>
 
     </main>
+
+    <!-- Certificate Modal Overlay -->
+    <div class="modal-overlay" id="certificateModalOverlay">
+        <div class="certificate-container">
+            <button class="cert-close-trigger" id="certCloseTrigger" aria-label="Close certificate">×</button>
+            <div class="cert-watermark">OPENLEARN</div>
+            
+            <p class="cert-org">OpenLearn Academy Certificate</p>
+            <h2 class="cert-title-primary">Certificate of Completion</h2>
+            <p class="cert-subtitle">THIS CREDENTIAL CONSTITUTES VERIFICATION OF COMPLETING THE STUDY PATHWAY</p>
+            
+            <span class="cert-recipient-name" id="certRecipientName">Alex Student</span>
+            
+            <p class="cert-body-text">
+                has successfully completed all required modules, code practices, logic quizzes, and guided development projects specified under the <strong>Python Developer Guided Path</strong>, demonstrating fluency in python syntax, object-oriented concepts, and automation scripting.
+            </p>
+            
+            <div class="cert-signatures">
+                <div class="cert-sig-block">
+                    <div class="cert-sig-line"></div>
+                    <span class="cert-sig-title">OpenLearn Board</span>
+                    <span class="cert-sig-subtitle">Curriculum Directors</span>
+                </div>
+                <div class="cert-sig-block">
+                    <div class="cert-sig-line"></div>
+                    <span class="cert-sig-title">Verification Seal</span>
+                    <span class="cert-sig-subtitle">Academic Integrity System</span>
+                </div>
+            </div>
+            
+            <div class="cert-meta-row">
+                <div class="cert-meta-item">Issue Date: <strong id="certIssueDate">June 8, 2026</strong></div>
+                <div class="cert-meta-item">Duration: <strong>4 Weeks Guided Path</strong></div>
+                <div class="cert-meta-item">GPA: <strong>4.0 Honors</strong></div>
+            </div>
+            
+            <span class="cert-id-badge" id="certVerificationId">VERIFICATION ID: OL-PY-5E29A11F</span>
+            
+            <div class="cert-buttons-row">
+                <button class="cert-action-btn cert-btn-dark" id="btnPrintCert">Print Certificate</button>
+                <button class="cert-action-btn cert-btn-outline" id="btnDownloadCert">Close Preview</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer-section">
@@ -550,5 +1591,655 @@
         </div>
     </footer>
 
+    <!-- Script Block for Dashboard Dynamics -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- SYLLABUS DATA CONFIG ---
+            const COURSE_MODULES = [
+                {
+                    name: "Python Basics",
+                    lessons: [
+                        { id: "01-intro", file: "01-intro.html", title: "Introduction", type: "lesson" },
+                        { id: "02-variables", file: "02-variables.html", title: "Variables", type: "lesson" },
+                        { id: "03-data-types", file: "03-data-type.html", title: "Data Types", type: "lesson" },
+                        { id: "input-output", file: "04-input-output.html", title: "Input & Output", type: "lesson" },
+                        { id: "03-operators", file: "05-operators.html", title: "Operators & Math", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Logic Building",
+                    lessons: [
+                        { id: "03-conditionals", file: "06-conditionals.html", title: "Conditionals", type: "lesson" },
+                        { id: "04-loops", file: "07-loops.html", title: "Loops & Iterations", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Functions",
+                    lessons: [
+                        { id: "06-functions", file: "06-functions.html", title: "Functions & Scope", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Data Structures",
+                    lessons: [
+                        { id: "05-lists", file: "05-lists.html", title: "Lists", type: "lesson" },
+                        { id: "07-dictionaries", file: "07-dictionaries.html", title: "Dictionaries", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "File Handling",
+                    lessons: [
+                        { id: "08-strings-files", file: "08-strings-files.html", title: "File Operations & Strings", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Object-Oriented Programming",
+                    lessons: [
+                        { id: "09-modules", file: "09-modules.html", title: "OOP & Modules", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Python Practice",
+                    lessons: [
+                        { id: "10-problem-solving", file: "10-problem-solving.html", title: "Problem Solving", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Tools & Growth",
+                    lessons: [
+                        { id: "11-git", file: "11-git.html", title: "Git & GitHub Basics", type: "lesson" },
+                        { id: "12-career", file: "12-career.html", title: "Career Path", type: "lesson" }
+                    ]
+                },
+                {
+                    name: "Guided Projects",
+                    lessons: [
+                        { id: "03-operators", file: "project-01-profile-analyzer.html", title: "Profile Analyzer", type: "project" },
+                        { id: "project-02", file: "project-02-guesser.html", title: "Number Guesser", type: "project" },
+                        { id: "project-03", file: "project-03-contact-book.html", title: "Contact Book", type: "project" },
+                        { id: "project-capstone", file: "project-capstone-cli.html", title: "CLI Automation Tool", type: "project" }
+                    ]
+                }
+            ];
+
+            // List of flat lessons
+            const ALL_ITEMS = [];
+            COURSE_MODULES.forEach(mod => {
+                mod.lessons.forEach(l => {
+                    ALL_ITEMS.push(l);
+                });
+            });
+
+            // --- LOCAL STORAGE HELPERS ---
+            function getLocalState(lesson) {
+                // Find if a practice or quiz is completed in localStorage.
+                let hasPractice = false;
+                let hasQuiz = false;
+
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.includes(lesson.file)) {
+                        if (key.startsWith("openlearn-quiz-")) {
+                            if (localStorage.getItem(key) === "complete") {
+                                hasQuiz = true;
+                            }
+                        }
+                        if (key.startsWith("openlearn-practice-")) {
+                            try {
+                                const data = JSON.parse(localStorage.getItem(key));
+                                if (data && data.checks && data.checks.length > 0 && data.checks.every(c => c === true)) {
+                                    hasPractice = true;
+                                }
+                            } catch (e) {}
+                        }
+                    }
+                }
+                return { practice: hasPractice, quiz: hasQuiz, done: hasPractice || hasQuiz };
+            }
+
+            // --- STATE MANAGEMENT ---
+            let state = {
+                studentName: localStorage.getItem("openlearn-student-name") || "Alex Student",
+                streak: parseInt(localStorage.getItem("openlearn-streak")) || 9,
+                dailyGoalMins: parseInt(localStorage.getItem("openlearn-daily-goal")) || 30,
+                dailyGoalProgress: parseInt(localStorage.getItem("openlearn-daily-progress")) || 15,
+                weeklyGoals: JSON.parse(localStorage.getItem("openlearn-weekly-goals")) || {
+                    "python-lessons": false,
+                    "build-project": false,
+                    "github-page": false
+                }
+            };
+
+            // Save state updates
+            function saveStateToStorage() {
+                localStorage.setItem("openlearn-student-name", state.studentName);
+                localStorage.setItem("openlearn-streak", state.streak);
+                localStorage.setItem("openlearn-daily-goal", state.dailyGoalMins);
+                localStorage.setItem("openlearn-daily-progress", state.dailyGoalProgress);
+                localStorage.setItem("openlearn-weekly-goals", JSON.stringify(state.weeklyGoals));
+            }
+
+            // --- UI RENDER HANDLERS ---
+            function updateDashboard() {
+                // 1. Gather lesson completions
+                let completedCount = 0;
+                const itemsStatus = ALL_ITEMS.map(item => {
+                    const status = getLocalState(item);
+                    if (status.done) completedCount++;
+                    return { item, status };
+                });
+
+                const totalItems = ALL_ITEMS.length; // 19
+                const completionPercentage = totalItems ? Math.round((completedCount / totalItems) * 100) : 0;
+                
+                // 2. Find recommended lesson (first uncompleted)
+                let recommended = null;
+                for (let i = 0; i < itemsStatus.length; i++) {
+                    if (!itemsStatus[i].status.done) {
+                        recommended = itemsStatus[i].item;
+                        break;
+                    }
+                }
+                // If all done, default to last or congratulations
+                if (!recommended && itemsStatus.length > 0) {
+                    recommended = null;
+                }
+
+                // 3. Update welcome banner & student name
+                document.getElementById("welcomeStudentName").textContent = state.studentName;
+                document.getElementById("navbarAvatar").textContent = state.studentName.charAt(0).toUpperCase();
+                document.getElementById("dropdownName").textContent = state.studentName;
+                document.getElementById("dropdownEmail").textContent = state.studentName.toLowerCase().replace(/\s+/g, "") + "@openlearn.edu";
+                document.getElementById("sandboxNameInput").value = state.studentName;
+
+                // Welcome message based on progress
+                let motTxt = "Consistency beats intensity. Review your pathway and build coding habits!";
+                if (completionPercentage === 0) {
+                    motTxt = "Ready to start your journey? Start with lesson one today!";
+                } else if (completionPercentage === 100) {
+                    motTxt = "Exceptional work! You have mastered the Python Developer guided path! 🎓";
+                } else if (state.streak >= 7) {
+                    motTxt = `Outstanding! You are on a ${state.streak}-day streak! Keep compounding your skills. 🚀`;
+                }
+                document.getElementById("welcomeMotivationText").textContent = motTxt;
+
+                // 4. Update Stats Row (KPIs)
+                document.getElementById("kpiProgress").textContent = `${completionPercentage}%`;
+                document.getElementById("kpiStreak").textContent = `🔥 ${state.streak}`;
+                
+                // Study Time: estimate 45m per completed lesson/project + goal progress
+                const studyHours = ((completedCount * 45 + state.dailyGoalProgress) / 60).toFixed(1);
+                document.getElementById("kpiHours").textContent = `${studyHours}h`;
+                
+                const certsUnlocked = completionPercentage === 100 ? "1 / 1" : "0 / 1";
+                document.getElementById("kpiCertificates").textContent = certsUnlocked;
+                
+                document.getElementById("sidebarStreakDays").textContent = `${state.streak} Days`;
+                if (state.streak === 0) {
+                    document.getElementById("streakIcon").textContent = "💤";
+                } else {
+                    document.getElementById("streakIcon").textContent = "🔥";
+                }
+
+                // 5. Recommended lesson card
+                const recCard = document.getElementById("recommendedLessonCard");
+                if (recommended) {
+                    recCard.style.display = "flex";
+                    document.getElementById("nextLessonTitle").textContent = `${recommended.title} (${recommended.type === "project" ? "Guided Project" : "Lesson"})`;
+                    const folder = recommended.type === "project" ? "" : "python/";
+                    document.getElementById("nextLessonCTA").href = `courses/python/${recommended.file}`;
+                    document.getElementById("nextLessonCTA").textContent = recommended.type === "project" ? "Open Project" : "Resume Learning";
+                    document.getElementById("resumePythonQuickAction").href = `courses/python/${recommended.file}`;
+                } else {
+                    recCard.style.display = "flex";
+                    document.getElementById("nextLessonTitle").textContent = "All modules complete! Claim your credential below.";
+                    document.getElementById("nextLessonCTA").href = "#pythonCertificateCard";
+                    document.getElementById("nextLessonCTA").textContent = "View Milestone";
+                    document.getElementById("resumePythonQuickAction").href = "courses.html";
+                }
+
+                // 6. Python progress completeness badge
+                document.getElementById("pythonCompletenessStatus").textContent = `${completionPercentage}% Completed`;
+
+                // 7. Render nested Syllabus Checklist
+                const syllabusContainer = document.getElementById("pythonModulesContainer");
+                syllabusContainer.innerHTML = ""; // Clear
+
+                let firstUncompletedFound = false;
+
+                COURSE_MODULES.forEach((module, modIndex) => {
+                    const modDiv = document.createElement("div");
+                    modDiv.className = "syllabus-module";
+
+                    // Calculate module completions
+                    let modDone = 0;
+                    module.lessons.forEach(l => {
+                        if (getLocalState(l).done) modDone++;
+                    });
+                    const modPct = Math.round((modDone / module.lessons.length) * 100);
+
+                    // Module Header
+                    const header = document.createElement("div");
+                    header.className = "syllabus-module-header";
+                    header.innerHTML = `
+                        <span>${module.name}</span>
+                        <span class="syllabus-module-badge">${modPct}% Done</span>
+                    `;
+                    modDiv.appendChild(header);
+
+                    // Module lessons checklist
+                    const listDiv = document.createElement("div");
+                    listDiv.className = "syllabus-lessons-list";
+
+                    module.lessons.forEach(lesson => {
+                        const itemDiv = document.createElement("div");
+                        itemDiv.className = "syllabus-lesson-item";
+
+                        const status = getLocalState(lesson);
+                        let statusIcon = "🔒";
+                        let statusClass = "locked";
+
+                        if (status.done) {
+                            statusIcon = "✅";
+                            statusClass = "completed";
+                        } else if (!firstUncompletedFound) {
+                            statusIcon = "⬜";
+                            statusClass = "next-up";
+                            firstUncompletedFound = true;
+                        }
+
+                        itemDiv.classList.add(statusClass);
+
+                        const isProjPill = lesson.type === "project" ? `<span class="syllabus-lesson-type-pill">Project</span>` : "";
+                        const destLink = `courses/python/${lesson.file}`;
+
+                        itemDiv.innerHTML = `
+                            <div class="syllabus-lesson-info">
+                                <span class="syllabus-lesson-status-icon">${statusIcon}</span>
+                                <a href="${destLink}" class="syllabus-lesson-link">${lesson.title}</a>
+                            </div>
+                            ${isProjPill}
+                        `;
+                        
+                        // Disable clicks on locked lessons
+                        if (statusClass === "locked") {
+                            const link = itemDiv.querySelector(".syllabus-lesson-link");
+                            link.removeAttribute("href");
+                            link.style.cursor = "default";
+                        }
+
+                        listDiv.appendChild(itemDiv);
+                    });
+
+                    modDiv.appendChild(listDiv);
+                    syllabusContainer.appendChild(modDiv);
+                });
+
+                // 8. Certificate milestone unlock/lock triggers
+                const certCard = document.getElementById("pythonCertificateCard");
+                const certBtn = document.getElementById("claimCertificateBtn");
+                const certLock = document.getElementById("certLockStatus");
+                const certDesc = document.getElementById("certDescription");
+
+                if (completionPercentage === 100) {
+                    certCard.classList.add("unlocked");
+                    certLock.textContent = "🏆";
+                    certDesc.textContent = "Excellent! Your credential is ready to claim and share.";
+                    certBtn.disabled = false;
+                } else {
+                    certCard.classList.remove("unlocked");
+                    certLock.textContent = "🔒";
+                    certDesc.textContent = "Unlock this official credential by completing all 15 lessons and 4 projects.";
+                    certBtn.disabled = true;
+                }
+
+                // 9. Goal Gauge Indicator
+                const targetMins = state.dailyGoalMins;
+                const currentMins = state.dailyGoalProgress;
+                const goalPct = Math.min(100, Math.round((currentMins / targetMins) * 100));
+                
+                document.getElementById("goalPctText").textContent = `${goalPct}%`;
+                document.getElementById("goalMinText").textContent = `${currentMins}m / ${targetMins}m`;
+
+                // SVG offset calculation (radius 36 => circumference = 226.19)
+                const circ = 226.19;
+                const offset = circ - (Math.min(goalPct, 100) / 100) * circ;
+                document.getElementById("goalCircularBar").style.strokeDashoffset = offset;
+
+                // Sync daily goal dropdown selector value
+                document.getElementById("dailyGoalSelector").value = state.dailyGoalMins;
+
+                // Sync weekly checklist UI
+                const wGoalInputs = document.querySelectorAll(".weekly-goal-checkbox input");
+                wGoalInputs.forEach(input => {
+                    const id = input.dataset.goalId;
+                    input.checked = state.weeklyGoals[id] || false;
+                });
+
+                // 10. Generate Heatmap Grid
+                generateActivityHeatmap();
+
+                // 11. Generate Recent Timeline log
+                generateRecentActivityTimeline(completionPercentage, completedCount);
+            }
+
+            // --- WEEKLY FOCUS SAVE HANDLER ---
+            document.querySelectorAll(".weekly-goal-checkbox input").forEach(input => {
+                input.addEventListener("change", (e) => {
+                    const id = e.target.dataset.goalId;
+                    state.weeklyGoals[id] = e.target.checked;
+                    saveStateToStorage();
+                });
+            });
+
+            // --- DAILY GOAL GAUGING ---
+            document.getElementById("dailyGoalSelector").addEventListener("change", (e) => {
+                state.dailyGoalMins = parseInt(e.target.value);
+                saveStateToStorage();
+                updateDashboard();
+            });
+
+            document.getElementById("add15MinBtn").addEventListener("click", () => {
+                state.dailyGoalProgress = state.dailyGoalProgress + 15;
+                if (state.dailyGoalProgress > 120) {
+                    state.dailyGoalProgress = 120; // Cap daily limit
+                }
+                saveStateToStorage();
+                updateDashboard();
+            });
+
+            // --- ACTIVITY HEATMAP GRID GENERATOR ---
+            function generateActivityHeatmap() {
+                const grid = document.getElementById("heatmapGrid");
+                grid.innerHTML = ""; // Clear
+
+                // Generate last 14 days (2 weeks of 7 squares)
+                const now = new Date();
+                const dayArr = [];
+                for (let i = 13; i >= 0; i--) {
+                    const d = new Date(now);
+                    d.setDate(now.getDate() - i);
+                    dayArr.push(d);
+                }
+
+                dayArr.forEach((dateObj, idx) => {
+                    const cell = document.createElement("div");
+                    cell.className = "heatmap-cell";
+                    
+                    // Format readable date
+                    const formattedDate = dateObj.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+                    
+                    // Assign activity levels based on state
+                    // We can pre-fill some past days with dynamic values to look realistic
+                    let activityLevel = 0;
+                    
+                    // Calculate a deterministic but realistic level for past days based on user streak
+                    if (state.streak > 0) {
+                        const daysAgo = 13 - idx;
+                        if (daysAgo < state.streak) {
+                            // Active day! Give it level 1 to 4 depending on index
+                            activityLevel = (idx % 3) + 1;
+                        }
+                    }
+
+                    // Today is active if dailyGoalProgress has been started
+                    if (idx === 13) {
+                        if (state.dailyGoalProgress >= 45) activityLevel = 4;
+                        else if (state.dailyGoalProgress >= 30) activityLevel = 3;
+                        else if (state.dailyGoalProgress >= 15) activityLevel = 2;
+                        else if (state.dailyGoalProgress > 0) activityLevel = 1;
+                    }
+
+                    cell.setAttribute("data-level", activityLevel);
+                    
+                    const minLabel = activityLevel === 0 ? "No activity" : `${activityLevel * 15} mins coding`;
+                    cell.setAttribute("data-tooltip", `${formattedDate}: ${minLabel}`);
+                    
+                    // On click day, simulate coding session
+                    cell.addEventListener("click", () => {
+                        if (idx === 13) {
+                            state.dailyGoalProgress += 15;
+                            saveStateToStorage();
+                            updateDashboard();
+                        } else {
+                            alert(`Simulated Study Date: ${formattedDate} (${minLabel})`);
+                        }
+                    });
+
+                    grid.appendChild(cell);
+                });
+            }
+
+            // --- RECENT TIMELINE ACHIEVEMENTS GENERATOR ---
+            function generateRecentActivityTimeline(pct, count) {
+                const timeline = document.getElementById("recentActivityTimeline");
+                timeline.innerHTML = "";
+
+                if (pct === 0) {
+                    timeline.innerHTML = `
+                        <div class="timeline-item">
+                            <div class="timeline-node" style="background-color: var(--border-color);"></div>
+                            <div class="timeline-details">
+                                <p class="timeline-title" style="color: var(--text-secondary); font-style: italic;">No achievements yet. Start your first module to begin your journey!</p>
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const activities = [];
+
+                if (pct === 100) {
+                    activities.push({ title: "Earned Python Developer Certificate 🎓", time: "Just now" });
+                    activities.push({ title: "Completed CLI Automation Tool Project", time: "1 hour ago" });
+                    activities.push({ title: "Completed Lesson 12: Career Path", time: "Yesterday" });
+                } else {
+                    if (count >= 1) {
+                        activities.push({ title: `Completed Lesson: ${ALL_ITEMS[count - 1].title}`, time: "2 hours ago" });
+                    }
+                    if (count >= 3) {
+                        activities.push({ title: "Completed Quiz: Python Basics", time: "Yesterday" });
+                    }
+                    if (count >= 5) {
+                        activities.push({ title: "Built Project: Profile Analyzer", time: "3 days ago" });
+                    }
+                }
+
+                activities.forEach(act => {
+                    const item = document.createElement("div");
+                    item.className = "timeline-item";
+                    item.innerHTML = `
+                        <div class="timeline-node"></div>
+                        <div class="timeline-details">
+                            <p class="timeline-title">${act.title}</p>
+                            <p class="timeline-time">${act.time}</p>
+                        </div>
+                    `;
+                    timeline.appendChild(item);
+                });
+            }
+
+            // --- SANDBOX DRAWER INTERACTION ---
+            const sandboxDrawer = document.getElementById("sandboxDrawer");
+            document.getElementById("sandboxHeaderTrigger").addEventListener("click", () => {
+                sandboxDrawer.classList.toggle("open");
+            });
+
+            // --- SIMULATE 0% PROGRESS ---
+            document.getElementById("btnSim0").addEventListener("click", () => {
+                // Remove all practice & quiz storage entries
+                for (let i = localStorage.length - 1; i >= 0; i--) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith("openlearn-practice-") || key.startsWith("openlearn-quiz-")) {
+                        localStorage.removeItem(key);
+                    }
+                }
+                
+                state.streak = 0;
+                state.dailyGoalProgress = 0;
+                state.weeklyGoals = {
+                    "python-lessons": false,
+                    "build-project": false,
+                    "github-page": false
+                };
+                
+                saveStateToStorage();
+                updateDashboard();
+                showSandboxFlash("#00875a");
+            });
+
+            // --- SIMULATE 50% PROGRESS ---
+            document.getElementById("btnSim50").addEventListener("click", () => {
+                // Clear first
+                document.getElementById("btnSim0").click();
+
+                // Complete first 9 items
+                const countToComplete = Math.floor(ALL_ITEMS.length / 2);
+                for (let i = 0; i < countToComplete; i++) {
+                    const lesson = ALL_ITEMS[i];
+                    // Simulate completed quiz key
+                    const quizKey = `openlearn-quiz-courses/python/${lesson.file}-${lesson.id}`;
+                    localStorage.setItem(quizKey, "complete");
+                    
+                    // Simulate checks completed practice key
+                    const practiceKey = `openlearn-practice-courses/python/${lesson.file}-${lesson.id}`;
+                    localStorage.setItem(practiceKey, JSON.stringify({
+                        checks: [true, true, true],
+                        code: "# Practice completed successfully\n"
+                    }));
+                }
+
+                state.streak = 5;
+                state.dailyGoalProgress = 20;
+                state.weeklyGoals = {
+                    "python-lessons": true,
+                    "build-project": false,
+                    "github-page": false
+                };
+
+                saveStateToStorage();
+                updateDashboard();
+                showSandboxFlash("#00875a");
+            });
+
+            // --- SIMULATE 100% PROGRESS ---
+            document.getElementById("btnSim100").addEventListener("click", () => {
+                // Complete all 19 items
+                ALL_ITEMS.forEach(lesson => {
+                    const quizKey = `openlearn-quiz-courses/python/${lesson.file}-${lesson.id}`;
+                    localStorage.setItem(quizKey, "complete");
+                    
+                    const practiceKey = `openlearn-practice-courses/python/${lesson.file}-${lesson.id}`;
+                    localStorage.setItem(practiceKey, JSON.stringify({
+                        checks: [true, true, true, true],
+                        code: "# Practice completed successfully\n"
+                    }));
+                });
+
+                state.streak = 12;
+                state.dailyGoalProgress = 30;
+                state.weeklyGoals = {
+                    "python-lessons": true,
+                    "build-project": true,
+                    "github-page": true
+                };
+
+                saveStateToStorage();
+                updateDashboard();
+                showSandboxFlash("#00875a");
+            });
+
+            // --- INCREMENT STREAK ---
+            document.getElementById("btnIncrementStreak").addEventListener("click", () => {
+                state.streak += 1;
+                saveStateToStorage();
+                updateDashboard();
+                showSandboxFlash("#d4af37");
+            });
+
+            // --- RESET STREAK ---
+            document.getElementById("btnResetStreak").addEventListener("click", () => {
+                state.streak = 0;
+                saveStateToStorage();
+                updateDashboard();
+                showSandboxFlash("#a30000");
+            });
+
+            // --- SAVE STUDENT NAME ---
+            document.getElementById("btnSaveName").addEventListener("click", () => {
+                const newName = document.getElementById("sandboxNameInput").value.trim();
+                if (newName) {
+                    state.studentName = newName;
+                    saveStateToStorage();
+                    updateDashboard();
+                    showSandboxFlash("#00875a");
+                }
+            });
+
+            function showSandboxFlash(color) {
+                const indicator = document.querySelector(".sandbox-indicator");
+                indicator.style.backgroundColor = color;
+                indicator.style.boxShadow = `0 0 12px ${color}`;
+                setTimeout(() => {
+                    indicator.style.backgroundColor = "#d4af37";
+                    indicator.style.boxShadow = "0 0 8px #d4af37";
+                }, 500);
+            }
+
+            // --- CERTIFICATE MODAL TRIGGER & PRINT ---
+            const overlay = document.getElementById("certificateModalOverlay");
+            const claimBtn = document.getElementById("claimCertificateBtn");
+            const closeBtn = document.getElementById("certCloseTrigger");
+            const printBtn = document.getElementById("btnPrintCert");
+            const closePreviewBtn = document.getElementById("btnDownloadCert");
+
+            claimBtn.addEventListener("click", () => {
+                // Fill details on certificate
+                document.getElementById("certRecipientName").textContent = state.studentName;
+                
+                // Render issue date
+                const today = new Date();
+                const issueDateText = today.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+                document.getElementById("certIssueDate").textContent = issueDateText;
+
+                // Random Verification ID
+                let hash = localStorage.getItem("openlearn-cert-hash");
+                if (!hash) {
+                    hash = "OL-PY-" + Math.random().toString(16).substr(2, 8).toUpperCase();
+                    localStorage.setItem("openlearn-cert-hash", hash);
+                }
+                document.getElementById("certVerificationId").textContent = `VERIFICATION ID: ${hash}`;
+
+                // Open modal
+                overlay.classList.add("open");
+            });
+
+            // Close actions
+            function closeModal() {
+                overlay.classList.remove("open");
+            }
+
+            closeBtn.addEventListener("click", closeModal);
+            closePreviewBtn.addEventListener("click", closeModal);
+            overlay.addEventListener("click", (e) => {
+                if (e.target === overlay) closeModal();
+            });
+
+            // Print
+            printBtn.addEventListener("click", () => {
+                window.print();
+            });
+
+            // --- SIMULATED LOGOUT ---
+            document.getElementById("simLogoutBtn").addEventListener("click", (e) => {
+                e.preventDefault();
+                alert("Simulating sign-out. Cleaning active session...");
+                window.location.href = "index.html";
+            });
+
+            // --- INITIALIZATION RUN ---
+            updateDashboard();
+        });
+    </script>
 </body>
 </html>
