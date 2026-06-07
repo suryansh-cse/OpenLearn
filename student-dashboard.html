@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OpenLearn Student Dashboard — Your personal learning control center.">
+    <title>OpenLearn | Student Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+    
+    <style>
+        /* Dashboard-specific styles using existing design tokens */
+        
+        .dashboard-page {
+            background-color: var(--bg-light);
+        }
+        
+        /* Main dashboard container */
+        .dashboard-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-md);
+        }
+        
+        /* Welcome Section */
+        .dashboard-welcome {
+            margin-bottom: var(--space-xl);
+            padding: var(--space-lg);
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+        }
+        
+        .welcome-greeting {
+            font-size: 1.875rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .welcome-motivation {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Progress Cards Grid */
+        .dashboard-section {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .dashboard-section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        /* Progress Card */
+        .progress-card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: 1.25rem;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+        }
+        
+        .progress-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(17, 17, 17, 0.07);
+            border-color: #c4c4c4;
+        }
+        
+        .progress-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: var(--bg-dark);
+            color: var(--bg-light);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9375rem;
+        }
+        
+        .progress-card-percentage {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .progress-card-title {
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: #e8e8e8;
+            border-radius: 999px;
+            overflow: hidden;
+            margin: var(--space-sm) 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: #0d0d0d;
+            border-radius: 999px;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-card-status {
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .progress-card-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--bg-light);
+            background-color: var(--bg-dark);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: opacity var(--transition), background-color var(--transition);
+            text-align: center;
+        }
+        
+        .progress-card-button:hover {
+            opacity: 0.88;
+        }
+        
+        .progress-card-button:disabled {
+            background-color: #d9d9d9;
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        /* Roadmap Section */
+        .roadmap-card {
+            padding: var(--space-lg);
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+        }
+        
+        .roadmap-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        .roadmap-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+        
+        .roadmap-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.04);
+        }
+        
+        .roadmap-item:last-child {
+            border-bottom: none;
+        }
+        
+        .roadmap-icon {
+            flex-shrink: 0;
+            font-size: 1.25rem;
+        }
+        
+        .roadmap-text {
+            flex: 1;
+        }
+        
+        /* Streak Card */
+        .streak-card {
+            padding: var(--space-lg);
+            background: linear-gradient(135deg, rgba(13, 13, 13, 0.04) 0%, rgba(13, 13, 13, 0.02) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+        }
+        
+        .streak-flame {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .streak-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .streak-label {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+        }
+        
+        .streak-quote {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.6;
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.5rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--bg-light);
+            background-color: var(--bg-dark);
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: opacity var(--transition), transform var(--transition);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        
+        .action-button:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+        
+        /* Motivation Card */
+        .motivation-card {
+            padding: var(--space-lg);
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: 0 1px 3px rgba(17, 17, 17, 0.04);
+            text-align: center;
+        }
+        
+        .motivation-quote {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Grid for dashboard sections */
+        .dashboard-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: var(--space-sm);
+            }
+            
+            .dashboard-welcome {
+                padding: var(--space-md);
+            }
+            
+            .welcome-greeting {
+                font-size: 1.5rem;
+            }
+            
+            .dashboard-section-title {
+                font-size: 1.125rem;
+            }
+            
+            .progress-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-button {
+                width: 100%;
+            }
+            
+            .roadmap-card,
+            .streak-card,
+            .motivation-card {
+                padding: var(--space-md);
+            }
+            
+            .streak-number {
+                font-size: 2rem;
+            }
+            
+            .streak-flame {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Header with Navbar -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="navbar-logo" href="index.html" aria-label="OpenLearn home">
+                <img src="assets/logo.png" alt="" width="56" height="56">
+                <span class="navbar-brand-text">OpenLearn</span>
+            </a>
+
+            <ul class="navbar-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <a class="btn-sign-in" href="#sign-in">Sign In</a>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-container">
+
+        <!-- Welcome Section -->
+        <section class="dashboard-welcome" aria-labelledby="welcome-heading">
+            <h1 id="welcome-heading" class="welcome-greeting">Welcome back, Student 👋</h1>
+            <p class="welcome-motivation">Continue learning and stay ahead.</p>
+        </section>
+
+        <!-- Learning Progress Section -->
+        <section class="dashboard-section" aria-labelledby="progress-heading">
+            <h2 id="progress-heading" class="dashboard-section-title">Your Learning Progress</h2>
+            <div class="progress-grid">
+                <!-- Python Progress Card -->
+                <article class="progress-card">
+                    <div class="progress-card-header">
+                        <div class="progress-card-icon">Py</div>
+                        <div class="progress-card-percentage">18%</div>
+                    </div>
+                    <h3 class="progress-card-title">Python</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 18%;"></div>
+                    </div>
+                    <p class="progress-card-status">18% completed • 2 of 11 modules</p>
+                    <button class="progress-card-button">Continue Learning</button>
+                </article>
+
+                <!-- HTML Progress Card -->
+                <article class="progress-card">
+                    <div class="progress-card-header">
+                        <div class="progress-card-icon">HTML</div>
+                        <div class="progress-card-percentage">0%</div>
+                    </div>
+                    <h3 class="progress-card-title">HTML</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <p class="progress-card-status">Not started • 0 of 8 modules</p>
+                    <button class="progress-card-button">Start Learning</button>
+                </article>
+
+                <!-- DSA Progress Card -->
+                <article class="progress-card">
+                    <div class="progress-card-header">
+                        <div class="progress-card-icon">DSA</div>
+                        <div class="progress-card-percentage">🔒</div>
+                    </div>
+                    <h3 class="progress-card-title">DSA</h3>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <p class="progress-card-status">Coming Soon • Locked</p>
+                    <button class="progress-card-button" disabled>Locked</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Current Roadmap Section -->
+        <section class="dashboard-section" aria-labelledby="roadmap-heading">
+            <h2 id="roadmap-heading" class="dashboard-section-title">Python Developer Roadmap</h2>
+            <div class="roadmap-card">
+                <h3 class="roadmap-title">Your Current Path</h3>
+                <ul class="roadmap-list">
+                    <li class="roadmap-item">
+                        <span class="roadmap-icon">✅</span>
+                        <span class="roadmap-text">Introduction</span>
+                    </li>
+                    <li class="roadmap-item">
+                        <span class="roadmap-icon">✅</span>
+                        <span class="roadmap-text">Variables</span>
+                    </li>
+                    <li class="roadmap-item">
+                        <span class="roadmap-icon">✅</span>
+                        <span class="roadmap-text">Data Types</span>
+                    </li>
+                    <li class="roadmap-item">
+                        <span class="roadmap-icon">⬜</span>
+                        <span class="roadmap-text">Input & Output</span>
+                    </li>
+                    <li class="roadmap-item">
+                        <span class="roadmap-icon">⬜</span>
+                        <span class="roadmap-text">Operators</span>
+                    </li>
+                    <li class="roadmap-item">
+                        <span class="roadmap-icon">🔒</span>
+                        <span class="roadmap-text">Mini Project</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Two-Column Layout: Streak + Motivation -->
+        <div class="dashboard-grid-2">
+            <!-- Daily Streak Card -->
+            <section class="dashboard-section" aria-labelledby="streak-heading">
+                <article class="streak-card">
+                    <div class="streak-flame" aria-hidden="true">🔥</div>
+                    <div id="streak-heading" class="streak-number">9</div>
+                    <p class="streak-label">Day Learning Streak</p>
+                    <p class="streak-quote">"Consistency beats intensity."</p>
+                </article>
+            </section>
+
+            <!-- Motivation Card -->
+            <section class="dashboard-section" aria-labelledby="motivation-heading">
+                <article class="motivation-card">
+                    <p id="motivation-heading" class="motivation-quote">
+                        Learning a little every day compounds faster than you think. Keep going! 🚀
+                    </p>
+                </article>
+            </section>
+        </div>
+
+        <!-- Quick Actions Section -->
+        <section class="dashboard-section" aria-labelledby="actions-heading">
+            <h2 id="actions-heading" class="dashboard-section-title">Quick Actions</h2>
+            <div class="quick-actions">
+                <a href="courses/python/index.html" class="action-button">Continue Python</a>
+                <button class="action-button">Practice Questions</button>
+                <button class="action-button">View Roadmap</button>
+                <a href="courses.html" class="action-button">Explore Courses</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-inner">
+
+            <div class="footer-column footer-brand">
+                <a class="footer-logo" href="index.html" aria-label="OpenLearn home">
+                    <img src="assets/logo.png" alt="" width="36" height="36">
+                    <span>OpenLearn</span>
+                </a>
+                <p class="footer-mission">
+                    We help learners build real skills with clarity, structure, and purpose.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-heading">Learn</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-heading">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="footer-heading">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms &amp; Conditions</a></li>
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 OpenLearn. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
